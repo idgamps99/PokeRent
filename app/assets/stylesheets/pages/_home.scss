@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #FB9481;
+  padding-top: 18px;
+}
+
+.container-text {
+  text-align: center;
+  margin-top: 10px;
+}
