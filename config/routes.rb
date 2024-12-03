@@ -16,5 +16,12 @@ Rails.application.routes.draw do
     patch 'users/update_avatar', to: 'users#update_avatar', as: :update_avatar
   # root "posts#index"
   end
-  resources :pokemons, only: [:index, :new, :create]
+
+  # Defines the root path route ("/")
+  # root "posts#index"
+  resources :pokemons, only: [:index, :show, :new, :create]
+  resources :pokemons do
+    resources :bookings, only: [:new, :create]
+  end
+  get 'test', to: 'pokemons#test', as: 'test_page'
 end
