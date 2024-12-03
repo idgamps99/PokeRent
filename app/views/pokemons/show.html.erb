@@ -10,12 +10,10 @@
   <h2>Book this Pokémon</h2>
 
   <div>
-    <%= form.label :booking_start, "Start Date" %>
     <%= form.input :booking_start, class: "datepicker", as: :string, placeholder: "Select a start date", input_html: { data: { controller: "datepicker" } } %>
   </div>
 
   <div>
-    <%= form.label :booking_end, "End Date" %>
     <%= form.input :booking_end, class: "datepicker", as: :string, placeholder: "Select an end date", input_html: { data: { controller: "datepicker" } } %>
   </div>
 
