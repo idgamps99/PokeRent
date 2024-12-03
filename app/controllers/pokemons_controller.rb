@@ -1,4 +1,9 @@
 class PokemonsController < ApplicationController
+  before_action :set_pokemon, only: [:show]
+
+  def show
+    @booking = Booking.new
+  end
 
   # GET /pokemons as pokemons_path
   def index
@@ -22,6 +27,10 @@ class PokemonsController < ApplicationController
   end
 
   private
+
+  def set_pokemon
+    @pokemon = Pokemon.find(params[:id])
+  end
 
   def pokemon_params
     params.require(:pokemon).permit(:name, :ability, :pokemon_type, :price_per_day, :photo)

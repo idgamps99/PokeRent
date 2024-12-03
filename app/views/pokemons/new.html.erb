@@ -2,13 +2,13 @@
   <%= simple_form_for @pokemon do |f| %>
     <div class="form-group">
       <%= f.input :name, label: "Pokémon Name" %>
-      <%= f.input :ability, label: "Ability" %>
+      <%= f.input :ability, label: "Pokémon Ability" %>
       <%= f.input :pokemon_type, label: "Pokémon Type", collection: ['Fire', 'Water', 'Electric', 'Grass'], prompt: 'Select Type' %>
       <%= f.input :price_per_day  %>
       <%= f.input :photo, as: :file %>
     </div>
     <div class="form-actions">
-      <%= f.button :submit %>
+      <%= f.button :submit, class: "btn-light-blue" %>
     </div>
   <% end %>
 </div>
