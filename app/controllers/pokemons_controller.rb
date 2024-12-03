@@ -1,16 +1,18 @@
 class PokemonsController < ApplicationController
   before_action :set_pokemon, only: [:show]
 
-  def show
-    @booking = Booking.new
-  end
-
   # GET /pokemons as pokemons_path
   def index
     @pokemons = Pokemon.all
     @users = User.all
   end
 
+  # GET /pokemons/:id as pokemon_path(pokemon)
+  def show
+    @booking = Booking.new
+  end
+
+  # GET /pokemons/new
   def new
     @pokemon = Pokemon.new
   end
