@@ -13,14 +13,14 @@ Rails.application.routes.draw do
 
   authenticated :user do
     get 'users/profile', to: 'users#profile', as: :authenticated_profile
+    get 'users/edit_avatar', to: 'users#edit_avatar', as: :edit_avatar
     patch 'users/update_avatar', to: 'users#update_avatar', as: :update_avatar
   # root "posts#index"
   end
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :pokemons, only: [:index, :show, :new, :create]
-  resources :pokemons do
+  resources :pokemons, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
   end
   get 'test', to: 'pokemons#test', as: 'test_page'
