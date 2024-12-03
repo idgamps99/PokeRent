@@ -73,5 +73,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
-# User authentication 
+# User authentication
 gem "devise"
+
+# Image upload
+gem "cloudinary"
