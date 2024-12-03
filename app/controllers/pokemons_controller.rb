@@ -6,6 +6,7 @@ class PokemonsController < ApplicationController
   end
 
   def test
+  end
 
   def new
     @pokemon = Pokemon.new
@@ -26,6 +27,8 @@ class PokemonsController < ApplicationController
 
   def set_pokemon
     @pokemon = Pokemon.find(params[:id])
+  end
+
   def pokemon_params
     params.require(:pokemon).permit(:name, :ability, :pokemon_type, :price_per_day)
   end

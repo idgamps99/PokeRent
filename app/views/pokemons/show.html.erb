@@ -6,17 +6,17 @@
 <p><strong>Type:</strong> <%= @pokemon.pokemon_type %></p>
 <p><strong>Price per Day:</strong> $<%= @pokemon.price_per_day %></p>
 
-<%= form_with(model: [@pokemon, @booking], url: pokemon_bookings_path(@pokemon), local: true) do |form| %>
+<%= simple_form_for([@pokemon, @booking]) do |form| %>
   <h2>Book this Pokémon</h2>
 
   <div>
     <%= form.label :booking_start, "Start Date" %>
-    <%= form.text_field :booking_start, class: "datepicker", placeholder: "Select a start date", data: { controller: "datepicker" } %>
+    <%= form.input :booking_start, class: "datepicker", as: :string, placeholder: "Select a start date", input_html: { data: { controller: "datepicker" } } %>
   </div>
 
   <div>
     <%= form.label :booking_end, "End Date" %>
-    <%= form.text_field :booking_end, class: "datepicker", placeholder: "Select an end date", data: { controller: "datepicker" } %>
+    <%= form.input :booking_end, class: "datepicker", as: :string, placeholder: "Select an end date", input_html: { data: { controller: "datepicker" } } %>
   </div>
 
   <%= form.submit "Book Pokémon" %>
