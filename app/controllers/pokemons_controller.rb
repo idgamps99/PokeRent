@@ -8,6 +8,12 @@ class PokemonsController < ApplicationController
   def test
   end
 
+  # GET /pokemons as pokemons_path
+  def index
+    @pokemons = Pokemon.all
+    @users = User.all
+  end
+  
   def new
     @pokemon = Pokemon.new
   end
