@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   authenticated :user do
     get 'users/profile', to: 'users#profile', as: :authenticated_profile
+    patch 'users/update_avatar', to: 'users#update_avatar', as: :update_avatar
   # root "posts#index"
+  end
   resources :pokemons, only: [:new, :create]
 end

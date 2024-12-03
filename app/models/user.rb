@@ -8,12 +8,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :username, :email, uniqueness: true
-
-   def avatar_options = {
-    "Ash" => "/app/assets/images/ash-pp.png",
-    "Professor Oak" => "/app/assets/images/prof-oak-pp.jpeg",
-    "Brock" => "/app/assets/images/brock-pp.jpg",
-    "Hilda" => "/app/assets/images/hilda-pp.jpg"
-  }.freeze
-
 end

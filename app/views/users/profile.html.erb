@@ -1,2 +1,20 @@
-<h1>Users#profile</h1>
-<p>Find me in app/views/users/profile.html.erb</p>
+<h1>Profile</h1>
+<div>
+  <p><strong>Email:</strong> <%= @user.email %></p>
+
+  <%# Display the Avatar %>
+  <% if @user.avatar_name.present? %>
+    <%= image_tag "avatars/#{@user.avatar_name}", alt: 'Avatar', class: 'avatar' %>
+  <% else %>
+    <p>No avatar set.</p>
+  <% end %>
+
+  <%# Avatar Selection  %>
+  <%= form_with url: update_avatar_user_path, method: :patch do |f| %>
+    <%= f.label :avatar_name, "Choose an Avatar" %>
+    <%= f.select :avatar_name, @avatars, selected: @user.avatar_name, include_blank: false %>
+    <%= f.submit "Change Avatar" %>
+  <% end %>
+</div>
+
+<%# DO MIGRATION %>
