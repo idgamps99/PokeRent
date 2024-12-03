@@ -1,0 +1,13 @@
+<div class="container-form">
+  <%= simple_form_for @pokemon do |f| %>
+    <div class="form-group">
+      <%= f.input :name, label: "Pokémon Name" %>
+      <%= f.input :ability %>
+      <%= f.input :pokemon_type, collection: ['Fire', 'Water', 'Electric', 'Grass'], prompt: 'Select Type' %>
+      <%= f.input :price_per_day  %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
