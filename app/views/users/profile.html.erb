@@ -1,20 +1,20 @@
 <h1>Profile</h1>
 <div>
+  <p><strong>First name:</strong> <%= @user.first_name %></p>
+  <p><strong>Last name:</strong> <%= @user.last_name %></p>
   <p><strong>Email:</strong> <%= @user.email %></p>
 
   <%# Display the Avatar %>
   <% if @user.avatar_name.present? %>
     <%= image_tag "avatars/#{@user.avatar_name}", alt: 'Avatar', class: 'avatar' %>
   <% else %>
-    <p>No avatar set.</p>
+    <%= image_tag "/app/assets/images/ash-pp.png", alt: 'Default Avatar', class: 'avatar' %>
   <% end %>
 
   <%# Avatar Selection  %>
-  <%= form_with url: update_avatar_user_path, method: :patch do |f| %>
+  <%= form_with url: update_avatar_path, method: :patch do |f| %>
     <%= f.label :avatar_name, "Choose an Avatar" %>
     <%= f.select :avatar_name, @avatars, selected: @user.avatar_name, include_blank: false %>
     <%= f.submit "Change Avatar" %>
   <% end %>
 </div>
-
-<%# DO MIGRATION %>
