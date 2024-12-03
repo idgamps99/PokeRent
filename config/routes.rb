@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'users/profile'
+  devise_for :users, controllers: {
+    registration: 'users/registrations'
+  }
+
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -7,11 +11,16 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
+  authenticated :user do
+    get 'users/profile', to: 'users#profile', as: :authenticated_profile
+    get 'users/edit_avatar', to: 'users#edit_avatar', as: :edit_avatar
+    patch 'users/update_avatar', to: 'users#update_avatar', as: :update_avatar
+  # root "posts#index"
+  end
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :pokemons, only: [:index, :show, :new, :create]
-  resources :pokemons do
+  resources :pokemons, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
   end
   get 'test', to: 'pokemons#test', as: 'test_page'
