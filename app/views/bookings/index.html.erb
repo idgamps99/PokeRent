@@ -1,0 +1,18 @@
+<div class="bookings-list">
+  <h2>List of Bookings</h2>
+</div>
+
+
+<% @bookings.each do |booking| %>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-btn">
+    <div class="card-product-infos">
+      <h2><%= booking.pokemon.name %></h2>
+      <p>The User ... wants to rent <strong><%= booking.pokemon.name %></strong></p>
+    </div>
+    <button>accept</button>
+    <button>decline</button>
+    </div>
+  </div>
+<% end %>
