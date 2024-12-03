@@ -5,7 +5,7 @@ class PokemonsController < ApplicationController
     @pokemons = Pokemon.all
     @users = User.all
   end
-  
+
   def new
     @pokemon = Pokemon.new
   end
@@ -24,6 +24,6 @@ class PokemonsController < ApplicationController
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:name, :ability, :pokemon_type, :price_per_day)
+    params.require(:pokemon).permit(:name, :ability, :pokemon_type, :price_per_day, :photo)
   end
 end
