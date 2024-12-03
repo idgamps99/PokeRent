@@ -20,7 +20,7 @@ class PokemonsController < ApplicationController
     @user = current_user
     @pokemon.user = @user
     if @pokemon.save
-      redirect_to root_path
+      redirect_to pokemon_path(@pokemon)
     else
       render :new, status: :unprocessable_entity
     end

@@ -14,5 +14,4 @@ Rails.application.routes.draw do
   resources :pokemons do
     resources :bookings, only: [:new, :create]
   end
-  get 'test', to: 'pokemons#test', as: 'test_page'
 end
