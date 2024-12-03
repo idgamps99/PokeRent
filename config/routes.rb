@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :pokemons, only: [:index, :show, :new, :create]
   resources :pokemons do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:create]
   end
-  get 'test', to: 'pokemons#test', as: 'test_page'
 end
