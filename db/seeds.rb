@@ -1,3 +1,11 @@
+# clean the seed each time before i run it
+# rails db:seed:replant
+# if Rails.env.development?
+#   puts "Destroying all data.."
+#   User.destroy_all
+#   Pokemon.destroy_all
+# end
+
 puts "Starting seeds.."
 pokemon_data = [
   { name: "Pikachu", ability: "Static", pokemon_type: "Electric", price_per_day: 12.5 },
