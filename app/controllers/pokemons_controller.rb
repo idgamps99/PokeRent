@@ -6,11 +6,27 @@ class PokemonsController < ApplicationController
   end
 
   def test
+
+  def new
+    @pokemon = Pokemon.new
+  end
+
+  def create
+    @pokemon = Pokemon.new(pokemon_params)
+    @user = current_user
+    @pokemon.user = @user
+    if @pokemon.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
 
   def set_pokemon
     @pokemon = Pokemon.find(params[:id])
+  def pokemon_params
+    params.require(:pokemon).permit(:name, :ability, :pokemon_type, :price_per_day)
   end
 end
