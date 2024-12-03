@@ -16,5 +16,5 @@ Rails.application.routes.draw do
     patch 'users/update_avatar', to: 'users#update_avatar', as: :update_avatar
   # root "posts#index"
   end
-  resources :pokemons, only: [:new, :create]
+  resources :pokemons, only: [:index, :new, :create]
 end
