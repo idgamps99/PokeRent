@@ -1,0 +1,25 @@
+<h1><%= @pokemon.name %></h1>
+
+<img src="https://projectpokemon.org/home/uploads/monthly_2019_06/large.partner-pikachu.png.98d62e1b15ba68afa8658c09a638e92f.png" alt="<%= @pokemon.name %>" style="width: 150px; height: auto;" />
+
+<p><strong>Ability:</strong> <%= @pokemon.ability %></p>
+<p><strong>Type:</strong> <%= @pokemon.pokemon_type %></p>
+<p><strong>Price per Day:</strong> $<%= @pokemon.price_per_day %></p>
+
+<%= form_with(model: [@pokemon, @booking], url: pokemon_bookings_path(@pokemon), local: true) do |form| %>
+  <h2>Book this Pokémon</h2>
+
+  <div>
+    <%= form.label :booking_start, "Start Date" %>
+    <%= form.text_field :booking_start, class: "datepicker", placeholder: "Select a start date", data: { controller: "datepicker" } %>
+  </div>
+
+  <div>
+    <%= form.label :booking_end, "End Date" %>
+    <%= form.text_field :booking_end, class: "datepicker", placeholder: "Select an end date", data: { controller: "datepicker" } %>
+  </div>
+
+  <%= form.submit "Book Pokémon" %>
+<% end %>
+
+<%# <%= link_to "Back to Pokémon List", pokemons_path %>
