@@ -7,12 +7,12 @@ class BookingsController < ApplicationController
 
   def create
     @booking = @pokemon.bookings.new(booking_params)
-    @booking.user = current_user 
+    @booking.user = current_user
 
     if @booking.save
       redirect_to @pokemon, notice: "Booking was successfully created."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
