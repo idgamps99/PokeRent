@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
   end
-  
+
   def new
     @booking = Booking.new
   end
@@ -14,9 +14,11 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to @pokemon, notice: "Booking was successfully created."
+      flash[:notice] = "Booking was successfully created for #{@pokemon.name} from #{@booking.booking_start} to #{@booking.booking_end}."
+      redirect_to @pokemon
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = "There was an issue with your booking. Please fix the errors and try again."
+      render "pokemons/show", status: :unprocessable_entity
     end
   end
 
