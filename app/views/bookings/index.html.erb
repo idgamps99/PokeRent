@@ -3,13 +3,29 @@
 </div>
 
 
-<% @bookings.each do |booking| %>
+<% @my_bookings.each do |booking| %>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= booking.pokemon.name %></h2>
+      <p>You are renting <strong><%= booking.pokemon.name %></strong> from <%= booking.pokemon.user.username %>.</p>
+      <p>Starting from: <%= booking.booking_start %> to <%= booking.booking_end %></p>
+    </div>
+  </div>
+<% end %>
+
+<div class="bookings-list">
+  <h2>List of Bookings to accept</h2>
+</div>
+
+<% @received_bookings.each do |booking| %>
   <div class="card-product">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="card-btn">
     <div class="card-product-infos">
       <h2><%= booking.pokemon.name %></h2>
-      <p>The User ... wants to rent <strong><%= booking.pokemon.name %></strong></p>
+      <p>You are renting <strong><%= booking.pokemon.name %></strong> to <%= booking.user.username %>.</p>
+      <p>Starting from: <%= booking.booking_start %> to <%= booking.booking_end %></p>
     </div>
     <button>accept</button>
     <button>decline</button>

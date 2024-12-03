@@ -2,7 +2,8 @@ class BookingsController < ApplicationController
   before_action :set_pokemon, only: [:create]
 
   def index
-    @bookings = current_user.bookings
+    @my_bookings = current_user.bookings.includes(:pokemon)
+    @received_bookings = current_user.received_bookings.includes(:pokemon)
   end
 
   def new
