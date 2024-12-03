@@ -2,8 +2,8 @@
   <%= simple_form_for @pokemon do |f| %>
     <div class="form-group">
       <%= f.input :name, label: "Pokémon Name" %>
-      <%= f.input :ability %>
-      <%= f.input :pokemon_type, collection: ['Fire', 'Water', 'Electric', 'Grass'], prompt: 'Select Type' %>
+      <%= f.input :ability, label: "Pokémon Ability" %>
+      <%= f.input :pokemon_type, label: "Pokémon Type", collection: ['Fire', 'Water', 'Electric', 'Grass'], prompt: 'Select Type' %>
       <%= f.input :price_per_day  %>
     </div>
     <div class="form-actions">
