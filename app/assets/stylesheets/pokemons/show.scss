@@ -1,0 +1,111 @@
+/* app/assets/stylesheets/pokemons/show.scss */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-family: 'Arial', sans-serif;
+  color: white; /* Pokémon name in white */
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background-color: #FB9481; /* Add a background color to make it pop */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.cl-image-tag {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+strong {
+  color: #FB9481;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+/* Modify the button to match your request */
+.btn {
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Change the text for "Book this Pokémon" */
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+/* Update the button for "Back to Pokémon List" */
+.btn.btn-primary {
+  background-color: grey;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.btn-primary:hover {
+  background-color: darkgrey;
+}
+
+.link-to-back {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.link-to-back:hover {
+  color: white;
+}

@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+
+
 h1 {
   margin: 0;
   color: white;
@@ -6,10 +8,60 @@ h1 {
   font-size: 40px;
   font-weight: bold;
   text-align: center;
+  margin-top: 60px;
   background-color: #FB9481;
   padding-top: 18px;
 }
 
+// Full-page container styles
+.full-page-container {
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+  box-sizing: border-box; /* Ensure padding and borders are included in width/height */
+}
+
+
+// Banner styles
+.banner {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  background-image: url('/assets/banner.png');
+  background-size: contain; /* Ensure the entire image is visible */
+  background-position: center center; /* Center the image both horizontally and vertically */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+// Text container styling
+.container-text {
+  width: 100%;
+  max-width: 1200px; /* Optional: Limit the width for readability */
+  text-align: center;
+  padding: 20px;
+}
+
+// Optional: Adjust the button styles
+.btn-primary {
+  background-color: #FB9481; /* Match the header color */
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+
+  &:hover {
+    background-color: #f8a69d; /* Slightly darker shade on hover */
+  }
+}
+
+// Container text margins and styling
 .container-text {
   text-align: center;
   margin-top: 10px;

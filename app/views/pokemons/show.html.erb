@@ -1,7 +1,7 @@
 <h1><%= @pokemon.name %></h1>
 <div class="container">
 
-  <%= cl_image_tag @pokemon.photo.key, height: 400, width: 250, crop: :fill if @pokemon.photo.attached? %>
+  <%= cl_image_tag @pokemon.photo.key, height: 400, width: 250, crop: :fill, class: "cl-image-tag" if @pokemon.photo.attached? %>
 
   <p><strong>Ability:</strong> <%= @pokemon.ability %></p>
   <p><strong>Type:</strong> <%= @pokemon.pokemon_type %></p>
@@ -9,7 +9,7 @@
   <p><strong>Price per Day:</strong> £<%= @pokemon.price_per_day %></p>
 
   <%= simple_form_for([@pokemon, @booking], local: true) do |form| %>
-    <h2>Book this Pokémon</h2>
+    <h2>Select Your Booking Dates</h2>
 
     <div>
       <%= form.input :booking_start, class: "datepicker", as: :string, placeholder: "Select a start date", input_html: { data: { controller: "datepicker" } } %>
@@ -22,5 +22,5 @@
     <%= form.submit "Book Pokémon", class: "btn btn-success text-white" %>
   <% end %>
 
-  <%= link_to "Back to Pokémon List", pokemons_path, class: "btn btn-primary" %>
+  <%= link_to "Back to Pokémon List", pokemons_path, class: "btn btn-primary link-to-back" %>
 </div>
