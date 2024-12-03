@@ -1,15 +1,16 @@
 <h1>Profile</h1>
 <div>
-  <p><strong>First name:</strong> <%= @user.first_name %></p>
-  <p><strong>Last name:</strong> <%= @user.last_name %></p>
-  <p><strong>Email:</strong> <%= @user.email %></p>
-
   <%# Display the Avatar %>
   <% if @user.avatar_name.present? %>
     <%= image_tag "#{@user.avatar_name}", alt: 'Avatar', class: 'avatar' %>
   <% else %>
     <%= image_tag "ash-pp.png", alt: 'Default Avatar', class: 'avatar' %>
   <% end %>
+
+  <%# Display user info %>
+  <p><strong>First name:</strong> <%= @user.first_name %></p>
+  <p><strong>Last name:</strong> <%= @user.last_name %></p>
+  <p><strong>Email:</strong> <%= @user.email %></p>
 
   <%# Avatar Selection  %>
   <%= simple_form_for @user, url: update_avatar_path, method: :patch do |f| %>
@@ -21,7 +22,6 @@
                   selected: @user.avatar_name,
                   include_blank: false %>
     </div>
-
     <div class="form-actions">
       <%= f.button :submit, "Change Avatar" %>
     </div>
