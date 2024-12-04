@@ -12,7 +12,6 @@ pokemon_data = [
   { name: 'Squirtle', ability: 'Torrent', pokemon_type: 'Water', price_per_day: 11.0, image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png' },
   { name: 'Jigglypuff', ability: 'Cute Charm', pokemon_type: 'Fairy', price_per_day: 9.0, image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png' }
 ]
-
 # Create users
 5.times do |i|
   user = User.create!(
@@ -22,7 +21,6 @@ pokemon_data = [
     last_name: "LastName#{i + 1}",
     password: 'password'
   )
-
   # Assign 5 Pokémon to each user
   pokemon_data.each do |pokemon|
     new_pokemon = user.pokemons.create!(
