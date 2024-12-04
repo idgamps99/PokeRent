@@ -1,29 +1,18 @@
 <h1>Profile</h1>
-<div>
+<div class="profile-container">
   <%# Display the Avatar %>
-  <% if @user.avatar_name.present? %>
-    <%= image_tag "#{@user.avatar_name}", alt: 'Avatar', class: 'avatar' %>
-  <% else %>
-    <%= image_tag "ash-pp.png", alt: 'Default Avatar', class: 'avatar' %>
-  <% end %>
-
-  <%# Display user info %>
-  <p><strong>First name:</strong> <%= @user.first_name %></p>
-  <p><strong>Last name:</strong> <%= @user.last_name %></p>
-  <p><strong>Email:</strong> <%= @user.email %></p>
-
-  <%# Avatar Selection  %>
-  <%= simple_form_for @user, url: update_avatar_path, method: :patch do |f| %>
-    <div class="form-group">
-      <%= f.label :avatar_name, "Choose an Avatar" %>
-      <%= f.input :avatar_name,
-                  collection: @avatars.map { |name, path| [name, path] },
-                  as: :select,
-                  selected: @user.avatar_name,
-                  include_blank: false %>
-    </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Change Avatar" %>
-    </div>
-  <% end %>
+  <div class="av-container">
+    <% if @user.avatar_name.present? %>
+      <%= image_tag @user.avatar_name, alt: 'Avatar', class: 'avatar' %>
+    <% else %>
+      <%= image_tag "ash-pp.png", alt: 'Default Avatar', class: 'avatar' %>
+    <% end %>
+  </div>
+  <div class="user-info"> <%# Display user info %>
+    <p><strong>First name:</strong> <%= @user.first_name %></p>
+    <p><strong>Last name:</strong> <%= @user.last_name %></p>
+    <p><strong>Username:</strong> <%= @user.username %></p>
+    <p><strong>Email:</strong> <%= @user.email %></p>
+  </div>
+  <%= link_to "Edit Account Settings", edit_user_registration_path, class: "btn btn-primary" %>
 </div>
