@@ -9,6 +9,8 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons/:id as pokemon_path(pokemon)
   def show
+    @pokemon = Pokemon.find(params[:id])
+    @owner = User.find(@pokemon.user_id)
     @booking = Booking.new
   end
 

@@ -1,29 +1,27 @@
 <div class="container my-4">
-  <%# TODO: Insert background image here maybe? %>
-  <h2>Available Pokémons:</h2>
+  <%= render "shared/searchbar" %>
 
-  <div class="row g-3">
+  <div class="pokemon-grid">
     <% @pokemons.each do |pokemon| %>
       <% owner = @users.find(pokemon.user_id) %>
-      <div class="col-md-4">
-        <div class="card custom-card">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <div class="img-placeholder text-center">
-              <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill if pokemon.photo.attached? %>
+      
+      <div class="pokemon-card">
+        <%# Entire card is a link to the show details page %>
+        <%= link_to pokemon_path(pokemon) do %>
+        <div class="card-body">
+          <div class="img-placeholder">
+            <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill if pokemon.photo.attached? %>
+          </div>
+
+          <div class="info">
+            <div>
+              <p class="name"><%= pokemon.name %></p>
+              <small class="owner">Owned by <%= owner.first_name %> <%= owner.last_name %></small>
             </div>
-            <div class="info d-flex justify-content-between align-items-center">
-              <div>
-                <p class="card-text mb-0"><%= pokemon.name %></p>
-                <small class="text-muted">Owned by <%= owner.first_name %> <%= owner.last_name %></small>
-              </div>
-              <span class="price">£<%= pokemon.price_per_day %></span>
-            </div>
-            <%# TODO: change button to link to show page, also position is off atm %>
-            <div class="mt-3 text-center">
-              <button class="btn btn-primary"><%= link_to "See Details", pokemon_path(pokemon) %> </button>
-            </div>
+            <span class="price">£<%= number_with_precision(pokemon.price_per_day, precision: 2)   %></span>
           </div>
         </div>
+        <% end %>
       </div>
     <% end %>
   </div>
