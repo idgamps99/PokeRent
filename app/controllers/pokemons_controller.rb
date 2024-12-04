@@ -29,10 +29,17 @@ class PokemonsController < ApplicationController
     @user = current_user
     @pokemon.user = @user
     if @pokemon.save
-      redirect_to pokemon_path(@pokemon)
+      # Changed this so it redirects to my pokemons page
+      redirect_to my_pokemons_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @pokemon = Pokemon.find(params[:id])
+    @pokemon.destroy
+    redirect_to my_pokemons_path
   end
 
   private
