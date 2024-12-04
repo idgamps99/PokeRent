@@ -1,0 +1,128 @@
+/* app/assets/stylesheets/pokemons/show.scss */
+
+body.show-page {
+  background-image: url('/assets/background_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.navbar, .footer {
+  background-color: white;
+  z-index: 10;
+}
+
+.show-page .container {
+  width: 100%; /* Full width of the viewport */
+  max-width: 1200px; /* Set a maximum width (adjust as needed) */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 20px; /* Adds 20px padding on the left and right */
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 40px); /* 100% width minus 20px on each side */
+}
+
+.show-page h1 {
+  font-family: 'Arial', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background-color: #D93A27;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.show-page .cl-image-tag {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.show-page p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.show-page strong {
+  color: #D93A27;
+}
+
+.show-page h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.show-page .btn {
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  justify-content: center;
+  width: 100%;
+}
+
+.show-page .btn-primary {
+  background-color: #4CAF50;
+  justify-content: center;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.show-page .btn-primary:hover {
+  background-color: #45a049;
+}
+
+.show-page .btn-success {
+  background-color: #28a745;
+  justify-content: center;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.show-page .btn-success:hover {
+  background-color: #218838;
+}
+
+.show-page h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.show-page .btn.btn-primary {
+  background-color: grey;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.show-page .btn.btn-primary:hover {
+  background-color: darkgrey;
+}
+
+.show-page .link-to-back {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.show-page .link-to-back:hover {
+  color: white;
+}
