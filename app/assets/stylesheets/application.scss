@@ -12,3 +12,13 @@
 @import "pages/index";
 
 @import "pokemons/show";
+
+body:not(.home) {
+  background-image: url('/assets/background_image.jpg');
+  background-size: cover; /* Ensures the image covers the entire viewport */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+  margin: 0; /* Removes any margin around the body */
+}

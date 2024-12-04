@@ -1,6 +1,20 @@
 /* app/assets/stylesheets/pokemons/show.scss */
 
-.container {
+body.show-page {
+  background-image: url('/assets/background_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.navbar, .footer {
+  background-color: white;
+  z-index: 10;
+}
+
+.show-page .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -9,35 +23,35 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.show-page h1 {
   font-family: 'Arial', sans-serif;
-  color: white; /* Pokémon name in white */
+  color: white;
   text-align: center;
   font-size: 3rem;
   margin-bottom: 20px;
-  background-color: #FB9481; /* Add a background color to make it pop */
+  background-color: #D93A27;
   padding: 10px;
   border-radius: 5px;
 }
 
-.cl-image-tag {
+.show-page .cl-image-tag {
   display: block;
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-p {
+.show-page p {
   font-size: 1.1rem;
   margin-bottom: 10px;
   line-height: 1.6;
 }
 
-strong {
-  color: #FB9481;
+.show-page strong {
+  color: #D93A27;
 }
 
-h2 {
+.show-page h2 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 15px;
@@ -45,39 +59,43 @@ h2 {
   color: #333;
 }
 
-/* Modify the button to match your request */
-.btn {
+.show-page .btn {
   padding: 12px 20px;
   border-radius: 5px;
   font-size: 1rem;
   font-weight: bold;
+  justify-content: center;
   width: 100%;
+  width: 70%;
+  max-width: 400px;
 }
 
-.btn-primary {
+.show-page .btn-primary {
   background-color: #4CAF50;
+  justify-content: center;
   border: none;
   color: white;
   cursor: pointer;
+  margin-top: 20px;
 }
 
-.btn-primary:hover {
+.show-page .btn-primary:hover {
   background-color: #45a049;
 }
 
-.btn-success {
+.show-page .btn-success {
   background-color: #28a745;
+  justify-content: center;
   border: none;
   color: white;
   cursor: pointer;
 }
 
-.btn-success:hover {
+.show-page .btn-success:hover {
   background-color: #218838;
 }
 
-/* Change the text for "Book this Pokémon" */
-h2 {
+.show-page h2 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 15px;
@@ -85,19 +103,18 @@ h2 {
   color: #333;
 }
 
-/* Update the button for "Back to Pokémon List" */
-.btn.btn-primary {
+.show-page .btn.btn-primary {
   background-color: grey;
   color: white;
   border: none;
   cursor: pointer;
 }
 
-.btn.btn-primary:hover {
+.show-page .btn.btn-primary:hover {
   background-color: darkgrey;
 }
 
-.link-to-back {
+.show-page .link-to-back {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -106,6 +123,6 @@ h2 {
   color: #007bff;
 }
 
-.link-to-back:hover {
+.show-page .link-to-back:hover {
   color: white;
 }
