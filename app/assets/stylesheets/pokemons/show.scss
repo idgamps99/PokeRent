@@ -15,12 +15,14 @@ body.show-page {
 }
 
 .show-page .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 100%; /* Full width of the viewport */
+  max-width: 1200px; /* Set a maximum width (adjust as needed) */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 20px; /* Adds 20px padding on the left and right */
   background-color: #f8f9fa;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 40px); /* 100% width minus 20px on each side */
 }
 
 .show-page h1 {
@@ -66,8 +68,6 @@ body.show-page {
   font-weight: bold;
   justify-content: center;
   width: 100%;
-  width: 70%;
-  max-width: 400px;
 }
 
 .show-page .btn-primary {

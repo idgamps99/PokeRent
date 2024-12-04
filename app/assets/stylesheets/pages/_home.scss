@@ -48,7 +48,7 @@
   width: 100%;
   height: 70vh;
   background-size: auto 100%;
-  background-position: center top; 
+  background-position: center top;
   background-repeat: no-repeat;
   background-image: url('/assets/background_banner_2.png');
   position: relative;
@@ -87,8 +87,8 @@
   margin-bottom: 80px;
 }
 
-.btn-primary {
-  background-color: #7ccb47;
+.btn-primary:not(.show) {
+  background-color: #29A745;
   border: none;
   padding: 10px 20px;
   color: white;
