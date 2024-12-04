@@ -1,16 +1,13 @@
 <div class="container my-4">
-<<<<<<< HEAD
   <h2 style="color: white; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);">
   Available Pokémons:
   </h2>
-=======
   <%= render "shared/searchbar" %>
->>>>>>> master
 
   <div class="pokemon-grid">
     <% @pokemons.each do |pokemon| %>
       <% owner = @users.find(pokemon.user_id) %>
-      
+
       <div class="pokemon-card">
         <%# Entire card is a link to the show details page %>
         <%= link_to pokemon_path(pokemon) do %>
