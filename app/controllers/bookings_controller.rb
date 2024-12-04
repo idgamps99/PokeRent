@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   def index
     @my_bookings = current_user.bookings.includes(:pokemon)
     @received_bookings = current_user.received_bookings.includes(:pokemon).where(status: "pending")
+    @accepted_bookings = current_user.received_bookings.includes(:pokemon).where(status: "accepted")
   end
 
   def new

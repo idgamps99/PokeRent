@@ -9,6 +9,10 @@
   border-radius: 8px;
   margin-bottom: 20px;
 
+  &.done {
+    opacity: 0.5;
+  }
+
   img {
     height: 100%;
     width: 120px;
@@ -59,9 +63,18 @@
         border-radius: 4px;
         display: inline-block;
         color: #555;
+
+      }
+
+      &.accepted {
+        p {
+          background-color: lightgreen;
+          color: black;
+        }
       }
     }
   }
+
 
   .card-btn {
     width: 100%;
