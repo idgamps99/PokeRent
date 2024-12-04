@@ -10,4 +10,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import "pokemons/show";
+
 @import "pages/profile";
+
+body:not(.home) {
+  background-image: url('/assets/background_image.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+}
