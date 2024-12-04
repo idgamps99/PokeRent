@@ -4,6 +4,8 @@
 #   puts "Destroying all data.."
 #   User.destroy_all
 #   Pokemon.destroy_all
+#   Booking.destroy_all
+#   puts "All data destroyed."
 # end
 
 puts "Starting seeds.."
