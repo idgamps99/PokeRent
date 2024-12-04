@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   resources :pokemons, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
   end
+
+  get "my_pokemons", to: "pokemons#my_pokemons"
+  
 end

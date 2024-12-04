@@ -7,6 +7,11 @@ class PokemonsController < ApplicationController
     @users = User.all
   end
 
+  # Display pokemons belonging to the user currently logged in
+  def my_pokemons
+    @pokemons = Pokemon.where(user_id: current_user)
+  end
+
   # GET /pokemons/:id as pokemon_path(pokemon)
   def show
     @pokemon = Pokemon.find(params[:id])
