@@ -20,4 +20,8 @@ class UsersController < ApplicationController
       render :profile
     end
   end
+
+  def my_pokemons
+    @pokemons = Pokemon.where(user_id: params[:user])
+  end
 end
