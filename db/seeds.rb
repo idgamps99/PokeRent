@@ -1,7 +1,9 @@
 require 'open-uri'
+
 # Clear existing data
 User.destroy_all
 Pokemon.destroy_all
+
 # Sample Pokémon data with image URLs
 pokemon_data = [
   { name: 'Pikachu', ability: 'Static', pokemon_type: 'Electric', price_per_day: 10.5, image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png' },
@@ -32,3 +34,5 @@ pokemon_data = [
     new_pokemon.photo.attach(io: file, filename: "#{pokemon[:name].downcase}.png", content_type: 'image/png')
   end
 end
+
+puts "Seed data created successfully!"
