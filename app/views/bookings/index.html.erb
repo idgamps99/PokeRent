@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="bookings-list">
+    <h2>List of Bookings</h2>
+    <p class="<%= 'd-none' if !@my_bookings.empty? %>">Nothing booked yet</p>
+  </div>
+
+
+  <% @my_bookings.each do |booking| %>
+    <div class="card-product">
+      <%= cl_image_tag booking.pokemon.photo.key if booking.pokemon.photo.attached? %>
+      <div class="card-btn">
+      <div class="card-product-infos">
+        <div class="info">
+         <h2><%= booking.pokemon.name %></h2>
+          <p>You are renting <strong><%= booking.pokemon.name %></strong> from <%= booking.pokemon.user.username %>.</p>
+          <p>Starting from: <%= booking.booking_start %> to: <%= booking.booking_end %></p>
+        </div>
+        <div class="status">
+          <p><%= booking.status %></p>
+        </div>
+          <%= link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'reject' do %>
+          <i class="fa-solid fa-trash"></i>
+          <% end %>
+      </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="bookings-list <%= 'd-none' if @received_bookings.empty? %>">
+    <h2>List of Bookings to accept</h2>
+  </div>
+
+  <% @received_bookings.each do |booking| %>
+    <div class="card-product">
+      <%= cl_image_tag booking.pokemon.photo.key if booking.pokemon.photo.attached? %>
+      <div class="card-btn">
+      <div class="card-product-infos">
+        <div class="info">
+          <h2><%= booking.pokemon.name %></h2>
+          <p>You are renting <strong><%= booking.pokemon.name %></strong> to <%= booking.user.username %>.</p>
+          <p>Starting from: <%= booking.booking_start %> to: <%= booking.booking_end %></p>
+        </div>
+      </div>
+      <%= link_to 'accept', accept_booking_path(booking) %>
+      <%= link_to 'reject', reject_booking_path(booking), class: 'reject' %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="bookings-list <%= 'd-none' if @accepted_bookings.empty? %>">
+    <h2>List of Bookings accepted</h2>
+  </div>
+
+  <% @accepted_bookings.each do |booking| %>
+    <div class="card-product done">
+      <%= cl_image_tag booking.pokemon.photo.key if booking.pokemon.photo.attached? %>
+      <div class="card-product-infos">
+        <div class="info">
+          <h2><%= booking.pokemon.name %></h2>
+          <p>You are renting <strong><%= booking.pokemon.name %></strong> to <%= booking.user.username %>.</p>
+          <p>Starting from: <%= booking.booking_start %> to: <%= booking.booking_end %></p>
+        </div>
+        <div class="status accepted">
+          <p><%= booking.status %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

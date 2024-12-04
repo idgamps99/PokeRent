@@ -29,7 +29,6 @@ pokemon_data = [
       pokemon_type: pokemon[:pokemon_type],
       price_per_day: pokemon[:price_per_day]
     )
-
     # Attach the Pokémon image using Active Storage
     file = URI.open(pokemon[:image_url])
     new_pokemon.photo.attach(io: file, filename: "#{pokemon[:name].downcase}.png", content_type: 'image/png')
