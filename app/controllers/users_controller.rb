@@ -5,10 +5,10 @@ class UsersController < ApplicationController
   def profile
     @user = current_user
     @avatars = {
-      "Ash" => "/app/assets/images/ash-pp.png",
-      "Professor Oak" => "/app/assets/images/prof-oak-pp.jpeg",
-      "Brock" => "/app/assets/images/brock-pp.jpg",
-      "Hilda" => "/app/assets/images/hilda-pp.jpg"
+      Ash: "ash-pp.png",
+      ProfessorOak: "prof-oak-pp.jpeg",
+      Brock: "brock-pp.jpg",
+      Hilda: "hilda-pp.jpg"
     }
   end
 
