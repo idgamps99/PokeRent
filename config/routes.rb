@@ -32,6 +32,6 @@ Rails.application.routes.draw do
   # display my pokemons
   get "my_pokemons", to: "pokemons#my_pokemons"
 
-  get 'bookings/:id/accept', to: 'bookings#accept', as: :accept_booking
-  get 'bookings/:id/reject', to: 'bookings#reject', as: :reject_booking
+  patch 'bookings/:id/accept', to: 'bookings#accept', as: :accept_booking
+  patch 'bookings/:id/reject', to: 'bookings#reject', as: :reject_booking
 end
