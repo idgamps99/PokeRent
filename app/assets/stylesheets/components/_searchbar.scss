@@ -1,52 +1,45 @@
 .search-bar {
   display: flex;
   align-items: center;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  justify-content: center;
+  background-color: #ffffff; /* White for a Poké Ball vibe */
+  border: 2px solid #ffcc00; /* Pokémon yellow border */
   border-radius: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  padding: 5px;
-  margin: 30px 60px;
-}
-
-.search-section {
-  flex: 1;
-  padding: 10px 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.search-section label {
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.search-section input {
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  color: #555;
-}
-
-.search-section input::placeholder {
-  color: #aaa;
-}
-
-.search-section:not(:last-child) {
-  border-right: 1px solid #ddd;
+  padding: 10px;
+  margin: 30px auto;
+  max-width: 400px;
 }
 
 .search-section.pokemon {
+  display: flex;
+  align-items: center;
   background-color: #f5f5f5;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
+  border-radius: 50px;
+  padding: 10px 15px;
+  flex-grow: 1;
+}
+
+.search-section input,
+.search-section select {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border-radius: 20px;
+  background-color: #fff; /* Contrast with the section */
+  color: #555;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-section select {
+  cursor: pointer;
 }
 
 .search-button {
-  background-color: #ff385c;
+  background-color: #ff385c; /* Pokémon red */
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -57,10 +50,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
-  background-color: #e32447;
+  background-color: #e32447; /* Darker red on hover */
 }
 
 .search-button i {
