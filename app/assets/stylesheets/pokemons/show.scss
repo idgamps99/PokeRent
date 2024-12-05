@@ -61,39 +61,7 @@ body.show-page {
   color: #333;
 }
 
-.show-page .btn {
-  padding: 12px 20px;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  justify-content: center;
-  width: 100%;
-}
 
-.show-page .btn-primary {
-  background-color: #4CAF50;
-  justify-content: center;
-  border: none;
-  color: white;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.show-page .btn-primary:hover {
-  background-color: #45a049;
-}
-
-.show-page .btn-success {
-  background-color: #28a745;
-  justify-content: center;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.show-page .btn-success:hover {
-  background-color: #218838;
-}
 
 .show-page h2 {
   font-size: 1.5rem;
@@ -103,12 +71,6 @@ body.show-page {
   color: #333;
 }
 
-.show-page .btn.btn-primary {
-  background-color: grey;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
 
 .show-page .btn.btn-primary:hover {
   background-color: darkgrey;

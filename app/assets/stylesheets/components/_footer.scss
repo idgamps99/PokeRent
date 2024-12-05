@@ -6,13 +6,12 @@
   height: 60px;
   padding: 0px 200px;
   color: rgba(0, 0, 0, 0.3);
-  position: fixed; /* Keeps it fixed at the bottom */
-  bottom: 0; /* Aligns it to the bottom of the viewport */
-  left: 0; /* Ensures it spans the entire width */
-  width: 100%; /* Ensures it spans the full width of the screen */
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
-  z-index: 100; /* Keeps it above other content */
-  margin-top: 20px; /* Adds space above the footer */
+  width: 100%;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  position: relative;
+  bottom: 0;
+  margin-top: auto;
 }
 
 .footer-links {
