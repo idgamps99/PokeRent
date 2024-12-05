@@ -1,6 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  position: fixed; /* Keeps it fixed at the bottom */
+  top: 0; /* Aligns it to the bottom of the viewport */
+  left: 0; /* Ensures it spans the entire width */
+  width: 100%; /* Ensures it spans the full width of the screen */
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
+  z-index: 100; /* Keeps it above other content */
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +15,142 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  margin-right: 8px; /* Increase space between logo and text */
+}
+
+.navbar-logo-container {
+  display: flex;
+  align-items: center; /* Vertically centers the logo and text */
+  z-index: 5;
+}
+
+
+.navbar-name {
+  font-size: 1.5rem; /* Adjust the font size for "PokéRent" */
+  font-weight: bold;
+  color: #333; /* Adjust the text color */
+  z-index: 5 !important;
+}
+
+.navbar-nav .nav-link {
+  color: #777 !important; /* Grey color for inactive links */
+  text-decoration: none; /* Remove default underline */
+  font-weight: bold; /* Make the font bold */
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  color: black !important; /* Black color for the active link */
+  border-bottom: 2px solid black; /* Minimalistic underline */
+  text-decoration: bold;
+}
+
+
+.navbar-nav .nav-link:hover {
+  color: #333 !important; /* Darker grey on hover */
+  text-decoration: bold; /* Subtle underline on hover */
+}
+
+/* Add space between nav items and avatar */
+.navbar-nav .nav-item {
+  margin-right: 15px; /* Add space between nav items */
+}
+
+/* Add a triangle to the avatar */
+.avatar {
+  position: relative; /* Ensures positioning context for the triangle */
+}
+
+.avatar::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -10px; /* Adjust the position of the triangle */
+  transform: translateY(-50%);
+  border-left: 5px solid transparent; /* Creates the left side of the triangle */
+  border-right: 5px solid transparent; /* Creates the right side of the triangle */
+  border-top: 5px solid #333; /* Creates the bottom side of the triangle (pointing down) */
+}
+
+.avatar:hover::after {
+  border-top-color: #555; /* Darker color on hover (optional) */
+}
+
+/* Ensure the dropdown menu stays within the viewport */
+.navbar .dropdown-menu {
+  background-color: white; /* Matches the navbar background */
+  border: 1px solid #ddd; /* Light border for separation */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  padding: 10px 0; /* Add padding for better spacing */
+  min-width: 200px; /* Ensures consistent width */
+  max-width: 300px; /* Set a maximum width */
+  right: 0; /* Aligns the dropdown to the right of the avatar */
+  left: auto; /* Prevents any left positioning */
+  z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+/* Adjust the position of the triangle */
+.avatar::after {
+  right: -10px; /* Move triangle further to the right for a cleaner look */
+}
+
+/* Ensure the dropdown stays visible when hovered */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Ensure the dropdown stays visible when hovered */
+}
+
+/* Optional: Add a bit of space between avatar and dropdown */
+.navbar .dropdown-menu-end {
+  margin-right: 10px; /* Add a margin for cleaner spacing */
+}
+
+/* Font Styling - use a similar font to the Pokémon logo */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Example, feel free to use another font if desired */
+/* Styling for the "PokéRent" arc */
+.navbar-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', sans-serif; /* Pokémon-inspired font */
+  font-size: 1.5rem; /* Even smaller text size */
+  font-weight: bold;
+  color: #ffcb05; /* Pokémon Yellow */
+  text-align: center;
+  position: relative;
+  margin-left: 10px;
+  overflow: hidden;
+  transform: rotate(0deg); /* No rotation for a straight arc */
+  z-index: 10; /* Ensure it's on top of the logo */
+  padding-left: 4px;
+}
+
+/* Apply a horizontal arc path to the letters */
+.navbar-name {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;  /* Make it span the entire width of the container */
+}
+
+/* Individual letter positioning */
+.navbar-name .letter:nth-child(1) { transform: rotate(-15deg) translateY(-5px); }
+.navbar-name .letter:nth-child(2) { transform: rotate(-10deg) translateY(-3px); }
+.navbar-name .letter:nth-child(3) { transform: rotate(0deg) translateY(0px); }
+.navbar-name .letter:nth-child(4) { transform: rotate(10deg) translateY(3px); }
+.navbar-name .letter:nth-child(5) { transform: rotate(15deg) translateY(5px); }
+.navbar-name .letter:nth-child(6) { transform: rotate(10deg) translateY(3px); }
+.navbar-name .letter:nth-child(7) { transform: rotate(0deg) translateY(0px); }
+.navbar-name .letter:nth-child(8) { transform: rotate(-10deg) translateY(-3px); }
+
+/* Apply Pokémon blue color to each letter */
+.navbar-name .letter:nth-child(odd) {
+  color: #3d74db; /* Pokémon Blue */
+}
+
+.navbar-name .letter:nth-child(even) {
+  color: #E05C5A; /* Pokémon Yellow */
+}
+
+/* Optional hover effect */
+.navbar-name:hover .letter {
+  transform: rotate(0deg) translateY(0); /* Reset the arc when hovering */
 }
