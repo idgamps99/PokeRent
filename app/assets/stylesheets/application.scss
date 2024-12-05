@@ -16,6 +16,9 @@
 @import "pages/profile";
 @import "pages/devise";
 
+@import "components/info-window";
+
+
 body:not(.home) {
   background-image: url('background_image.jpg');
   background-size: cover;
