@@ -1,6 +1,6 @@
 <div class="container">
   <div class="bookings-list">
-    <h2>List of Bookings</h2>
+    <h2>My bookings</h2>
     <p class="<%= 'd-none' if !@my_bookings.empty? %>">Nothing booked yet</p>
   </div>
 
@@ -15,7 +15,7 @@
           <p>You have requested <strong><%= booking.pokemon.name %></strong> from <%= booking.pokemon.user.username %>.</p>
           <p>Starting from: <%= booking.booking_start %> to: <%= booking.booking_end %></p>
         </div>
-        <div class="status">
+        <div class="status <%= booking.status == 'accepted' ? 'accepted' : booking.status == 'rejected' ? 'rejected' : '' %>">
           <p><%= booking.status %></p>
         </div>
           <%= link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'reject' do %>
@@ -27,7 +27,7 @@
   <% end %>
 
   <div class="bookings-list <%= 'd-none' if @received_bookings.empty? %>">
-    <h2>List of Bookings to accept</h2>
+    <h2>Bookings to accept</h2>
   </div>
 
   <% @received_bookings.each do |booking| %>
@@ -48,7 +48,7 @@
   <% end %>
 
   <div class="bookings-list <%= 'd-none' if @accepted_bookings.empty? %>">
-    <h2>List of Bookings accepted</h2>
+    <h2>Accepted bookings</h2>
   </div>
 
   <% @accepted_bookings.each do |booking| %>
