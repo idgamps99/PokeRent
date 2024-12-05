@@ -63,7 +63,6 @@
   background-repeat: no-repeat;
   background-image: asset-url('banner.png');
   position: relative;
-  margin-bottom: 50px;
 }
 
 @media (max-width: 1080px) {
@@ -81,9 +80,7 @@
 .container-text {
   width: 100%;
   max-width: 1200px;
-  padding-top: 60px;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding: 20px 60px;
   text-align: center;
   margin: 0 auto;
   box-sizing: border-box;
@@ -98,27 +95,32 @@
   color: #3d74db;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 20px;
   width: 70%;
   max-width: 400px;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   text-transform: uppercase;
   border-radius: 25px;
   font-family: 'Baloo 2', sans-serif;
   letter-spacing: 2px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position:relative;
-  bottom: 0;
-  margin-bottom: -25px; /* Adjust this value for overlap */
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
   background-color: #3d74db;
   color: #ffcb05;
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.5);
-  transform: scale(1.05); /* Only scale the button on hover */
-  transform-origin: center; /* Ensures scaling from the center */
+  transform: translateY(-3px);
+}
+
+
+.btn-primary:focus, .btn-primary:active {
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 .pikachu-image {
