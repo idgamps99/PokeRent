@@ -6,11 +6,11 @@ Pokemon.destroy_all
 
 # Sample Pokémon data with image URLs
 pokemon_data = [
-  { name: 'Pikachu', ability: 'Static', pokemon_type: 'Electric', price_per_day: 10.5, image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png' },
-  { name: 'Charmander', ability: 'Blaze', pokemon_type: 'Fire', price_per_day: 15.0, image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png' },
-  { name: 'Bulbasaur', ability: 'Overgrow', pokemon_type: 'Grass', price_per_day: 12.0, image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png' },
-  { name: 'Squirtle', ability: 'Torrent', pokemon_type: 'Water', price_per_day: 11.0, image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png' },
-  { name: 'Jigglypuff', ability: 'Cute Charm', pokemon_type: 'Fairy', price_per_day: 9.0, image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png' }
+  { name: 'Pikachu', ability: 'Static', pokemon_type: 'Electric', image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png' },
+  { name: 'Charmander', ability: 'Blaze', pokemon_type: 'Fire', image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png' },
+  { name: 'Bulbasaur', ability: 'Overgrow', pokemon_type: 'Grass', image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png' },
+  { name: 'Squirtle', ability: 'Torrent', pokemon_type: 'Water', image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png' },
+  { name: 'Jigglypuff', ability: 'Cute Charm', pokemon_type: 'Fairy', mage_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png' }
 ]
 # Create users
 5.times do |i|
@@ -27,7 +27,7 @@ pokemon_data = [
       name: pokemon[:name],
       ability: pokemon[:ability],
       pokemon_type: pokemon[:pokemon_type],
-      price_per_day: pokemon[:price_per_day]
+      price_per_day: rand(8..34)
     )
     # Attach the Pokémon image using Active Storage
     file = URI.open(pokemon[:image_url])
