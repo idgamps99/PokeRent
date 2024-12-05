@@ -25,3 +25,6 @@ body:not(.home) {
   min-height: 100vh;
   margin: 0;
 }
+
+// Map
+@import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
