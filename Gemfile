@@ -82,3 +82,5 @@ gem "cloudinary"
 
 # Add map
 gem "geocoder"
+# Search functionality
+gem "pg_search"
