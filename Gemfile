@@ -78,3 +78,6 @@ gem "devise"
 
 # Image upload
 gem "cloudinary"
+
+# Search functionality
+gem "pg_search"

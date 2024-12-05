@@ -1,17 +1,22 @@
 <div class="search-bar">
   <div class="search-section pokemon">
-    <label>Pokémon Name</label>
-    <input type="text" placeholder="Search destinations">
+    <%= form_with url: pokemons_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Name"
+        %>
+      <%= select_tag :type_query,
+            options_for_select(%w(Normal Fire Water Flying Grass Poison Electric Ground Psychic Rock Ice Bug Dragon Ghost Dark Steel Fairy),
+            params[:type_query]),
+            class: "form-control",
+            include_blank: "Type"
+        %>
+      <div class="button-margins">
+      <%= button_tag type: :submit, class: "search-button" do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %>
+      </div>
+    <% end %>
   </div>
-  <div class="search-section">
-    <label>Check in</label>
-    <input data-controller="datapicker" type="text" placeholder="Add Start Date">
-  </div>
-  <div class="search-section">
-    <label>Check out</label>
-    <input data-controller="datapicker" type="text" placeholder="Add End Date">
-  </div>
-  <button class="search-button">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
 </div>
