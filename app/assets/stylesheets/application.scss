@@ -24,4 +24,92 @@ body:not(.home) {
   background-attachment: fixed;
   min-height: 100vh;
   margin: 0;
+  margin-top: 90px;
+}
+
+body, .navbar, .dropdown-item, .banner h1, .header-banner h1 {
+  font-family: 'Baloo 2', sans-serif; /* Playful, comic-like font */
+}
+
+/* General Background and Text Colors */
+body {
+  background-color: #f5f5f5; /* Light grey background */
+  color: #333; /* Dark text for readability */
+}
+
+h1, h2, h3, h4 {
+  color: #3d74db; /* Pokémon Blue for headings */
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Buttons - Primary and Others */
+.btn-primary {
+  background-color: #ffcb05;
+  color: #3d74db;
+  border: 2px solid #3d74db;
+  font-weight: bold;
+  border-radius: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #3d74db;
+  color: #ffcb05;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: #3d74db;
+  color: #ffcb05;
+  border: 2px solid #ffcb05;
+  font-weight: bold;
+  border-radius: 25px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  margin-top: 15px;
+}
+
+.btn-secondary:hover {
+  background-color: #ffcb05;
+  color: #3d74db;
+  transform: scale(1.05);
+}
+
+/* Card Design */
+.card {
+  border: 2px solid #3d74db;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  background-color: #ffcb05;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3d74db;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.card-title {
+  color: #3d74db;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #555;
 }
