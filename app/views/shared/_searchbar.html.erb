@@ -1,21 +1,3 @@
-<%# <div class="search-bar">
-  <div class="search-section pokemon">
-    <label>Pokémon Name</label>
-    <input type="text" placeholder="Search destinations">
-  </div>
-  <div class="search-section">
-    <label>Check in</label>
-    <input data-controller="datapicker" type="text" placeholder="Add Start Date">
-  </div>
-  <div class="search-section">
-    <label>Check out</label>
-    <input data-controller="datapicker" type="text" placeholder="Add End Date">
-  </div>
-  <button class="search-button">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-</div> %>
-
 <div class="search-bar">
   <div class="search-section pokemon">
     <%= form_with url: pokemons_path, method: :get, class: "d-flex" do %>

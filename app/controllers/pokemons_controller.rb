@@ -16,7 +16,7 @@ class PokemonsController < ApplicationController
         @pokemons = @pokemons.search_by_name(params[:query])
       end
     elsif params[:type_query].present?
-      #searched only by type
+      # Searched only by type
       @pokemons = @pokemons.search_by_type(params[:type_query])
     end
   end
