@@ -14,9 +14,10 @@
 @import "pokemons/show";
 
 @import "pages/profile";
+@import "pages/devise";
 
 body:not(.home) {
-  background-image: url('/assets/background_image.jpg');
+  background-image: url('background_image.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

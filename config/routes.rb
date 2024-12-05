@@ -20,13 +20,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
   resources :bookings, only: [:index, :new, :create, :destroy]
-  resources :pokemons, only: [:index, :show, :new, :create] do
+  resources :pokemons do
     resources :bookings, only: [:new, :create]
   end
   resources :users, only: [] do
-    resources :bookings, only: [:index,]
+    resources :bookings, only: [:index]
   end
+
+  # display my pokemons
+  get "my_pokemons", to: "pokemons#my_pokemons"
+
   get 'bookings/:id/accept', to: 'bookings#accept', as: :accept_booking
   get 'bookings/:id/reject', to: 'bookings#reject', as: :reject_booking
 end

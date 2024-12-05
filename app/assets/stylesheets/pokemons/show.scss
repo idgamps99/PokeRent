@@ -88,3 +88,29 @@ body.show-page {
 .show-page .link-to-back:hover {
   color: white;
 }
+
+.show-page .option-btn {
+  display: flex;
+  padding: 0 16px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 8px;
+
+  .btn-edit {
+    max-width: 250px;
+    margin: 0;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .btn-delete {
+    max-width: 250px;
+
+    &:hover {
+      background-color: #b02a37;
+    }
+  }
+}
