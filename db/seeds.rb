@@ -14,11 +14,13 @@ pokemon_data = [
 ]
 # Create users
 5.times do |i|
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
   user = User.create!(
-    email: "user#{i + 1}@example.com",
+    email: Faker::Internet.email(name: first_name),
     username: "User#{i + 1}",
-    first_name: "FirstName#{i + 1}",
-    last_name: "LastName#{i + 1}",
+    first_name: first_name,
+    last_name: last_name,
     password: 'password'
   )
   # Assign 5 Pokémon to each user
