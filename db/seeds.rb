@@ -33,8 +33,9 @@ pokemon_data = [
     last_name: last_name,
     password: 'password'
   )
-  # Assign 5 Pokémon to each user - randomise which ones they are assigned 
-  pokemon_data.each do |pokemon|
+  # Assign random number of Pokémon to each user
+  randomised_data = pokemon_data.shuffle.first(rand(3..10))
+  randomised_data.each do |pokemon|
     new_pokemon = user.pokemons.create!(
       name: pokemon[:name],
       ability: pokemon[:ability],
