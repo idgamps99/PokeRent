@@ -31,7 +31,7 @@ pokemon_data = [
     username: "User#{i + 1}",
     first_name: first_name,
     last_name: last_name,
-    password: 'password'
+    password: 'password',
   )
   # Assign random number of Pokémon to each user
   randomised_data = pokemon_data.shuffle.first(rand(3..10))
