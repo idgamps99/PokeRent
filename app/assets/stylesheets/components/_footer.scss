@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 60px; /* Increased height for better spacing */
   padding: 0px 200px;
   color: rgba(0, 0, 0, 0.3);
   width: 100%;
@@ -12,6 +12,7 @@
   position: relative;
   bottom: 0;
   margin-top: auto;
+  flex-wrap: wrap; /* Allows wrapping for better responsiveness */
 }
 
 .footer-links {
@@ -33,4 +34,25 @@
 
 .footer .fa-heart {
   color: #D23333;
+}
+
+.footer-message {
+  flex: 1; /* Ensures the message spans evenly across available space */
+  text-align: center; /* Centers the message horizontally */
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 5px 0;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  text-align: right; /* Aligns the copyright text to the right */
+  flex: 1; /* Pushes it to the far right of the footer */
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
