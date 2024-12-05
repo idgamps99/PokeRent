@@ -4,28 +4,37 @@
   </h2>
   <%= render "shared/searchbar" %>
 
-  <div class="pokemon-grid">
-    <% @pokemons.each do |pokemon| %>
-      <% owner = @users.find(pokemon.user_id) %>
+  <div class="content-wrapper">
+    <div class="pokemon-grid available-pokemon-grid">
+      <% @pokemons.each do |pokemon| %>
+        <% owner = @users.find(pokemon.user_id) %>
 
-      <div class="pokemon-card">
-        <%# Entire card is a link to the show details page %>
-        <%= link_to pokemon_path(pokemon) do %>
-        <div class="card-body">
-          <div class="img-placeholder">
-            <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill if pokemon.photo.attached? %>
-          </div>
-
-          <div class="info">
-            <div>
-              <p class="name"><%= pokemon.name %></p>
-              <small class="owner">Owned by <%= owner.first_name %> <%= owner.last_name %></small>
+        <div class="pokemon-card">
+          <%# Entire card is a link to the show details page %>
+          <%= link_to pokemon_path(pokemon) do %>
+          <div class="card-body">
+            <div class="img-placeholder">
+              <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill if pokemon.photo.attached? %>
             </div>
-            <span class="price">£<%= number_with_precision(pokemon.price_per_day, precision: 2)   %></span>
+
+            <div class="info">
+              <div>
+                <p class="name"><%= pokemon.name %></p>
+                <small class="owner">Owned by <%= owner.first_name %> <%= owner.last_name %></small>
+              </div>
+              <span class="price">£<%= number_with_precision(pokemon.price_per_day, precision: 2)   %></span>
+            </div>
           </div>
+          <% end %>
         </div>
-        <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+
+    <%# map %>
+    <div class="map-container"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
