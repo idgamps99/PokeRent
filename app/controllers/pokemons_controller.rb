@@ -8,7 +8,8 @@ class PokemonsController < ApplicationController
     @markers = @pokemons.geocoded.map do |p| {
         lat: p.latitude,
         lng: p.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {pokemon: p})
+        info_window_html: render_to_string(partial: "info_window", locals: {pokemon: p}),
+        marker_html: render_to_string(partial: "marker")
       }
     end
 
