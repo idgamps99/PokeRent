@@ -3,8 +3,22 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons as pokemons_path
   def index
-    @pokemons = Pokemon.all
-    @users = User.all
+    # Filter out current user's Pokemons from index page - this is what will be displayed if no search queries
+    @users = User.where.not(id: current_user)
+    @pokemons = Pokemon.where.not(user_id: current_user)
+
+    if params[:query].present?
+      if params[:type_query].present?
+        # Searched by name and type
+        @pokemons = @pokemons.search_by_type(params[:type_query]).search_by_type(params[:type_query])
+      else
+        # Searched only by name
+        @pokemons = @pokemons.search_by_name(params[:query])
+      end
+    elsif params[:type_query].present?
+      #searched only by type
+      @pokemons = @pokemons.search_by_type(params[:type_query])
+    end
   end
 
   # Display pokemons belonging to the user currently logged in
