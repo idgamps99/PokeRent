@@ -41,8 +41,8 @@
           <p>Starting from: <%= booking.booking_start %> to: <%= booking.booking_end %></p>
         </div>
       </div>
-      <%= link_to 'accept', accept_booking_path(booking) %>
-      <%= link_to 'reject', reject_booking_path(booking), class: 'reject' %>
+      <%= link_to 'accept', accept_booking_path(booking), data: {turbo_method: :patch}%>
+      <%= link_to 'reject', reject_booking_path(booking), class: 'reject', data: {turbo_method: :patch} %>
       </div>
     </div>
   <% end %>
