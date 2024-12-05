@@ -6,6 +6,7 @@
       <%= f.input :pokemon_type, label: "Pokémon  Type", collection: %w(Normal Fire Water Flying Grass Poison Electric Ground Psychic Rock Ice Bug Dragon Ghost Dark Steel Fairy), prompt: 'Select Type' %>
       <%= f.input :price_per_day  %>
       <%= f.input :photo, as: :file %>
+      <%= f.input :address, label: "Address" %>
     </div>
     <div class="form-actions">
       <%= f.button :submit, class: "btn-light-blue" %>

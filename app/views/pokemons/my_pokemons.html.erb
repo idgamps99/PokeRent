@@ -1,23 +1,25 @@
 <div class="container my-4">
   <h2>My Pokemons: </h2>
-  <div class="pokemon-grid">
-    <% @pokemons.each do |pokemon| %>
-      <div class="pokemon-card">
-        <%= link_to pokemon_path(pokemon) do %> <!-- Entire card is a link to the show details page -->
-        <div class="card-body">
-          <div class="img-placeholder">
-            <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill if pokemon.photo.attached? %>
-          </div>
-          <div class="info">
-            <div>
-              <p class="name"><%= pokemon.name %></p>
+  <div class="content-wrapper">
+    <div class="pokemon-grid">
+      <% @pokemons.each do |pokemon| %>
+        <div class="pokemon-card">
+          <%= link_to pokemon_path(pokemon) do %> <!-- Entire card is a link to the show details page -->
+          <div class="card-body">
+            <div class="img-placeholder">
+              <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill if pokemon.photo.attached? %>
             </div>
-            <span class="price">£<%= number_with_precision(pokemon.price_per_day, precision: 2) %></span>
+            <div class="info">
+              <div>
+                <p class="name"><%= pokemon.name %></p>
+              </div>
+              <span class="price">£<%= number_with_precision(pokemon.price_per_day, precision: 2) %></span>
+            </div>
           </div>
+          <% end %>
         </div>
-        <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
   <%= link_to "Add a new Pokémon to your collection!", new_pokemon_path, class: "btn btn-primary" %>
 </div>
