@@ -24,8 +24,10 @@
       <% end %>
     </div>
     <% if current_user.id == @pokemon.user_id %>
-      <%= link_to "Edit Pokémon", edit_pokemon_path(@pokemon), class: "btn btn-primary" %>
-      <%= link_to "Delete Pokémon", @pokemon, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+      <div class="option-btn">
+        <%= link_to "Edit Pokémon", edit_pokemon_path(@pokemon), class: "btn btn-primary btn-edit" %>
+        <%= link_to "Delete Pokémon", @pokemon, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-delete" %>
+      </div>
       <%= link_to "Back to My Pokémon List", my_pokemons_path, class: "btn btn-primary link-to-back" %>
     <% else %>
       <%= link_to "Back to Pokémon List", pokemons_path, class: "btn btn-primary link-to-back" %>
