@@ -3,6 +3,7 @@
   <div class="pokemon-grid">
     <% @pokemons.each do |pokemon| %>
       <div class="pokemon-card">
+        <%= link_to pokemon_path(pokemon) do %> <!-- Entire card is a link to the show details page -->
         <div class="card-body">
           <div class="img-placeholder">
             <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill if pokemon.photo.attached? %>
@@ -10,14 +11,11 @@
           <div class="info">
             <div>
               <p class="name"><%= pokemon.name %></p>
-              <%= link_to "change details", "#" %>
             </div>
             <span class="price">£<%= number_with_precision(pokemon.price_per_day, precision: 2) %></span>
-            <div>
-              <%= link_to "delete", pokemon_path(pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger small-link" %>
-            </div>
           </div>
         </div>
+        <% end %>
       </div>
     <% end %>
   </div>

@@ -1,5 +1,5 @@
 class PokemonsController < ApplicationController
-  before_action :set_pokemon, only: [:show]
+  before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
 
   # GET /pokemons as pokemons_path
   def index
@@ -14,7 +14,6 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons/:id as pokemon_path(pokemon)
   def show
-    @pokemon = Pokemon.find(params[:id])
     @owner = User.find(@pokemon.user_id)
     @booking = Booking.new
   end
@@ -37,9 +36,19 @@ class PokemonsController < ApplicationController
   end
 
   def destroy
-    @pokemon = Pokemon.find(params[:id])
     @pokemon.destroy
     redirect_to my_pokemons_path
+  end
+
+  def edit
+  end
+
+  def update
+    if @pokemon.update(pokemon_params)
+	    redirect_to pokemon_path(@pokemon), notice: 'Pokémon was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
