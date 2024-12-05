@@ -10,7 +10,7 @@ pokemon_data = [
   { name: 'Charmander', ability: 'Blaze', pokemon_type: 'Fire', image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png' },
   { name: 'Bulbasaur', ability: 'Overgrow', pokemon_type: 'Grass', image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png' },
   { name: 'Squirtle', ability: 'Torrent', pokemon_type: 'Water', image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png' },
-  { name: 'Jigglypuff', ability: 'Cute Charm', pokemon_type: 'Fairy', mage_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png' }
+  { name: 'Jigglypuff', ability: 'Cute Charm', pokemon_type: 'Fairy', image_url: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png' }
 ]
 # Create users
 5.times do |i|
