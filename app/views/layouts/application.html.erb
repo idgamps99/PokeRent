@@ -15,7 +15,7 @@
     <div class="page-container">
     <div class="navbar-container"> <%= render "shared/navbar" %></div>
       <% flash.each do |key, message| %>
-        <div class="flash <%= key %>"><%= message %></div>
+        <div class="flash <%= key %> alert alert-success"><%= message %></div>
       <% end %>
       <div class="content-container"><%= yield %></div>
         <footer>

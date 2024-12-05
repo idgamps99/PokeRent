@@ -38,6 +38,7 @@ body, .navbar, .dropdown-item, .banner h1, .header-banner h1 {
 body {
   background-color: #f5f5f5; /* Light grey background */
   color: #333; /* Dark text for readability */
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
