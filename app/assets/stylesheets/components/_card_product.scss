@@ -10,7 +10,7 @@
   margin-bottom: 20px;
 
   &.done {
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   img {
@@ -69,6 +69,13 @@
       &.accepted {
         p {
           background-color: lightgreen;
+          color: black;
+        }
+      }
+
+      &.rejected {
+        p {
+          background-color: #DC3545;
           color: black;
         }
       }

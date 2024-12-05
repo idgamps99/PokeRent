@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :bookings, only: [:index, :new, :create, :destroy]
-  resources :pokemons, only: [:index, :show, :new, :create, :destroy] do
+  resources :pokemons do
     resources :bookings, only: [:new, :create]
   end
   resources :users, only: [] do
