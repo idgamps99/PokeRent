@@ -27,7 +27,10 @@ pokemon_data = [
       name: pokemon[:name],
       ability: pokemon[:ability],
       pokemon_type: pokemon[:pokemon_type],
-      price_per_day: rand(8..34)
+      price_per_day: rand(8..34),
+      address: pokemon[:address],
+      latitude: pokemon[:latitude],
+      longitude: pokemon[:longitude]
     )
     # Attach the Pokémon image using Active Storage
     file = URI.open(pokemon[:image_url])

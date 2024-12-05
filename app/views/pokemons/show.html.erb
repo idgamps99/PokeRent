@@ -7,22 +7,30 @@
     <p><strong>Ability:</strong> <%= @pokemon.ability %></p>
     <p><strong>Type:</strong> <%= @pokemon.pokemon_type %></p>
     <p><strong>Owned by:</strong> <%= @owner.first_name %> <%= @owner.last_name %></p>
-    <p><strong>Price per Day:</strong> £<%= @pokemon.price_per_day %></p>
+    <p><strong>Price per Day:</strong> £<%= number_with_precision(@pokemon.price_per_day, precision: 2)   %></p>
+    <div class="<%= "d-none" if @pokemon.user_id == current_user.id  %>">
+      <%= simple_form_for([@pokemon, @booking], local: true) do |form| %>
+        <h2>Select Your Booking Dates</h2>
 
-    <%= simple_form_for([@pokemon, @booking], local: true) do |form| %>
-      <h2>Select Your Booking Dates</h2>
+        <div>
+          <%= form.input :booking_start, class: "datepicker", as: :string, placeholder: "Select a start date", input_html: { data: { controller: "datepicker" } } %>
+        </div>
 
-      <div>
-        <%= form.input :booking_start, class: "datepicker", as: :string, placeholder: "Select a start date", input_html: { data: { controller: "datepicker" } } %>
+        <div>
+          <%= form.input :booking_end, class: "datepicker", as: :string, placeholder: "Select an end date", input_html: { data: { controller: "datepicker" } } %>
+        </div>
+
+        <%= form.submit "Book Pokémon", class: "btn btn-success text-white" %>
+      <% end %>
+    </div>
+    <% if current_user.id == @pokemon.user_id %>
+      <div class="option-btn">
+        <%= link_to "Edit Pokémon", edit_pokemon_path(@pokemon), class: "btn btn-primary btn-edit" %>
+        <%= link_to "Delete Pokémon", @pokemon, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-delete" %>
       </div>
-
-      <div>
-        <%= form.input :booking_end, class: "datepicker", as: :string, placeholder: "Select an end date", input_html: { data: { controller: "datepicker" } } %>
-      </div>
-
-      <%= form.submit "Book Pokémon", class: "btn btn-success text-white" %>
+      <%= link_to "Back to My Pokémon List", my_pokemons_path, class: "btn btn-primary link-to-back" %>
+    <% else %>
+      <%= link_to "Back to Pokémon List", pokemons_path, class: "btn btn-primary link-to-back" %>
     <% end %>
-
-    <%= link_to "Back to Pokémon List", pokemons_path, class: "btn btn-primary link-to-back" %>
   </div>
 </div>
