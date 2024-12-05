@@ -49,8 +49,9 @@
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  background-image: url('/assets/background_banner_2.png');
-  position: relative; /* Position context for absolute positioning */
+  background-image: asset-url('background_banner_2.png');
+  position: relative;
+  padding-bottom: 20px;
   padding-top: 60px;
 }
 
@@ -60,7 +61,7 @@
   background-size: contain, 100%;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url('/assets/banner.png');
+  background-image: asset-url('banner.png');
   position: relative;
   margin-bottom: 50px;
 }
