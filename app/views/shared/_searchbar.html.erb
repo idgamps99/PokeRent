@@ -22,14 +22,19 @@
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Type a keyword"
+            placeholder: "Name"
         %>
-           <%= select_tag :type_query,
-            options_for_select(%w(Normal Fire Water Flying Grass Poison Electric Ground Psychic Rock Ice Bug Dragon Ghost Dark Steel Fairy), params[:type_query]),
+      <%= select_tag :type_query,
+            options_for_select(%w(Normal Fire Water Flying Grass Poison Electric Ground Psychic Rock Ice Bug Dragon Ghost Dark Steel Fairy),
+            params[:type_query]),
             class: "form-control",
-            include_blank: "Select Type"
-      %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+            include_blank: "Type"
+        %>
+      <div class="button-margins">
+      <%= button_tag type: :submit, class: "search-button" do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %>
+      </div>
     <% end %>
   </div>
 </div>
