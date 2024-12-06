@@ -33,6 +33,22 @@
         border-color: #007bff;
       }
     }
+
+    .img-preview {
+      display: flex;
+      // justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      .avatar {
+        img {
+          max-width: 150px;
+          max-height: 150px;
+          border-radius: 8px;
+          display: block;
+        }
+      }
+    }
   }
 
   .form-actions {
@@ -59,5 +75,5 @@
       background-color: #ccc;
       cursor: not-allowed;
     }
-}
+  }
 }
