@@ -13,7 +13,11 @@
               <div>
                 <p class="name"><%= pokemon.name %></p>
               </div>
-              <span class="price">£<%= number_with_precision(pokemon.price_per_day, precision: 2) %></span>
+                <p> Mana-cost:
+                  <% pokemon.price_per_day.to_i.times do %>
+                    <img src="<%= asset_path "pngegg.png" %>" alt="Price Icon" class="price-icon">
+                  <% end %>
+                </p>
             </div>
           </div>
           <% end %>

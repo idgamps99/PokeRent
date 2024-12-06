@@ -7,7 +7,10 @@
     <p><strong>Ability:</strong> <%= @pokemon.ability %></p>
     <p><strong>Type:</strong> <%= @pokemon.pokemon_type %></p>
     <p><strong>Owned by:</strong> <%= @owner.first_name %> <%= @owner.last_name %></p>
-    <p><strong>Price per Day:</strong> £<%= number_with_precision(@pokemon.price_per_day, precision: 2)   %></p>
+    <p><strong>Mana-cost:</strong>
+    <% @pokemon.price_per_day.to_i.times do %>
+      <img src="<%= asset_path "pngegg.png" %>"  alt="Price Icon" class="price-icon">
+    <% end %>
     <div class="<%= "d-none" if @pokemon.user_id == current_user.id  %>">
       <%= simple_form_for([@pokemon, @booking], local: true) do |form| %>
         <h2>Select Your Booking Dates</h2>

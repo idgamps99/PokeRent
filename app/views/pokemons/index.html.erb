@@ -18,11 +18,16 @@
             </div>
 
             <div class="info">
-              <div>
+              <div class="poke-info">
                 <p class="name"><%= pokemon.name %></p>
-                <small class="owner">Owned by <%= owner.first_name %> <%= owner.last_name %></small>
+                <p class="type"><%= pokemon.pokemon_type %></p>
               </div>
-              <span class="price">£<%= number_with_precision(pokemon.price_per_day, precision: 2)   %></span>
+                <small class="owner">
+                  Mana-cost:
+                  <% pokemon.price_per_day.to_i.times do %>
+                    <img src="<%= asset_path "pngegg.png" %>"  alt="Price Icon" class="price-icon">
+                  <% end %>
+                </small>
             </div>
           </div>
           <% end %>
