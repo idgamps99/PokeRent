@@ -3,7 +3,7 @@
   <div class="content-wrapper">
     <div class="pokemon-grid">
       <% @pokemons.each do |pokemon| %>
-        <div class="pokemon-card">
+        <div class="pokemon-card" style="background-image: url('<%= asset_path "pokemon-card.png" %>'); background-size: cover;">
           <%= link_to pokemon_path(pokemon) do %> <!-- Entire card is a link to the show details page -->
           <div class="card-body">
             <div class="img-placeholder">
@@ -15,7 +15,7 @@
               </div>
                 <p> Mana-cost:
                   <% pokemon.price_per_day.to_i.times do %>
-                    <img src="<%= asset_path "pngegg.png" %>" alt="Price Icon" class="price-icon">
+                    <img src="<%= asset_path "mana-cost.png" %>" alt="Price Icon" class="price-icon">
                   <% end %>
                 </p>
             </div>

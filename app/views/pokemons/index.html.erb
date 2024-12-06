@@ -5,33 +5,12 @@
   <%= render "shared/searchbar" %>
 
   <div class="content-wrapper">
-    <div class="pokemon-grid available-pokemon-grid">
+    <div class="pokemon-grid">
       <% @pokemons.each do |pokemon| %>
         <% owner = @users.find(pokemon.user_id) %>
 
-        <div class="pokemon-card">
-          <%# Entire card is a link to the show details page %>
-          <%= link_to pokemon_path(pokemon) do %>
-          <div class="card-body">
-            <div class="img-placeholder">
-              <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill if pokemon.photo.attached? %>
-            </div>
+        <%=  render "pokemon_card", pokemon: pokemon, owner: owner %>
 
-            <div class="info">
-              <div class="poke-info">
-                <p class="name"><%= pokemon.name %></p>
-                <p class="type"><%= pokemon.pokemon_type %></p>
-              </div>
-                <small class="owner">
-                  Mana-cost:
-                  <% pokemon.price_per_day.to_i.times do %>
-                    <img src="<%= asset_path "pngegg.png" %>"  alt="Price Icon" class="price-icon">
-                  <% end %>
-                </small>
-            </div>
-          </div>
-          <% end %>
-        </div>
       <% end %>
     </div>
 

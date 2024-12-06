@@ -27,7 +27,7 @@
     <p><strong>Address: </strong><%= @pokemon.address %></p>
     <p><strong>Mana-cost:</strong>
     <% @pokemon.price_per_day.to_i.times do %>
-      <img src="<%= asset_path "pngegg.png" %>"  alt="Price Icon" class="price-icon">
+      <img src="<%= asset_path "mana-cost.png" %>"  alt="Price Icon" class="price-icon">
     <% end %>
     <div class="<% "d-none" if @pokemon.user_id == current_user.id %>">
 
