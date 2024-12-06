@@ -4,9 +4,16 @@
 
     <!-- Back Button -->
     <div class="back-button-container">
-      <%= link_to pokemons_path, class: "link-to-back" do %>
+      <% if @pokemon.user_id == current_user.id %>
+        <%= link_to my_pokemons_path, class: "link-to-back" do %>
+          <%= image_tag("b-alphabet-round-circle-icon.png", alt: "Back Icon", width: 30, height: 30, class: "back-icon") %>
+          <span class="back-text">Back</span>
+        <% end %>
+      <% else %>
+        <%= link_to pokemons_path, class: "link-to-back" do %>
         <%= image_tag("b-alphabet-round-circle-icon.png", alt: "Back Icon", width: 30, height: 30, class: "back-icon") %>
         <span class="back-text">Back</span>
+      <% end %>
       <% end %>
     </div>
 
@@ -22,7 +29,8 @@
     <% @pokemon.price_per_day.to_i.times do %>
       <img src="<%= asset_path "pngegg.png" %>"  alt="Price Icon" class="price-icon">
     <% end %>
-    <div class="<% "d-none" if @pokemon.user_id == current_user.id  %>">
+    <div class="<% "d-none" if @pokemon.user_id == current_user.id %>">
+
     <!-- Booking Form -->
     <% if @pokemon.user_id != current_user.id %>
     <h2>Select Your Booking Dates</h2>
@@ -47,17 +55,16 @@
     <!-- Pokémon Owner Options -->
     <% if current_user.id == @pokemon.user_id %>
       <div class="option-btn">
-        <%= link_to edit_pokemon_path(@pokemon), class: "btn btn-primary btn-edit" do %>
-          <%= image_tag("a-alphabet-round-circle-icon.png", alt: "A Icon", width: 20, height: 20, class: "icon") %>
-          <span>Edit Pokémon</span>
-        <% end %>
-        <%= link_to @pokemon, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-delete" do %>
-          <%= image_tag("x-circle-fill.512x512.png", alt: "Delete Icon", width: 20, height: 20, class: "icon-delete") %>
-          <span>Delete Pokémon</span>
-        <% end %>
-      </div>
+      <%= link_to edit_pokemon_path(@pokemon), class: "btn btn-primary btn-edit" do %>
+        <%= image_tag("a-alphabet-round-circle-icon.png", alt: "A Icon", width: 20, height: 20, class: "icon") %>
+        <span>Edit Pokémon</span>
+      <% end %>
+      <%= link_to  pokemon_path(@pokemon), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-delete" do %>
+        <%= image_tag("x-circle-fill.512x512.png", alt: "Delete Icon", width: 20, height: 20, class: "icon-delete") %>
+        <span>Delete Pokémon</span>
+      <% end %>
     <% end %>
-  </div>
+    </div>
 </div>
 </div>
 </div>
