@@ -72,10 +72,6 @@ body.show-page {
 }
 
 
-.show-page .btn.btn-primary:hover {
-  background-color: darkgrey;
-}
-
 .show-page .link-to-back {
   display: block;
   text-align: center;
@@ -113,4 +109,47 @@ body.show-page {
       background-color: #b02a37;
     }
   }
+}
+
+.container {
+  position: relative; /* Ensure positioning works inside this container */
+}
+
+
+.back-button-container {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Spacing between the icon and the text */
+}
+
+.back-icon {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.back-text {
+  font-size: 18px; /* Adjust font size as needed */
+  color: #333; /* Adjust color as needed */
+  padding-left: 5px;
+}
+
+.icon-delete {
+  margin-right: 12px; /* Adds more space between the icon and the text */
+  vertical-align: middle; /* Aligns the icon with the text vertically */
+}
+
+/* Apply this to the body or the main container of the page */
+body, .show-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+
+/* Style your footer */
+footer {
+  margin-top: auto; /* Pushes footer to the bottom of the page */
 }
