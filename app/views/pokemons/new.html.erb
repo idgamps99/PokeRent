@@ -5,6 +5,14 @@
       <%= f.input :ability, label: "Pokémon Ability" %>
       <%= f.input :pokemon_type, label: "Pokémon  Type", collection: %w(Normal Fire Water Flying Grass Poison Electric Ground Psychic Rock Ice Bug Dragon Ghost Dark Steel Fairy), prompt: 'Select Type' %>
       <%= f.input :price_per_day  %>
+      <div class="image-preview">
+        <%= image_tag(
+          @pokemon.photo.attached? ? url_for(@pokemon.photo) : "ash-pp.png",
+          alt: "Image preview",
+          class: "img-thumbnail",
+          id: "photo-preview"
+        ) %>
+      </div>
       <%= f.input :photo, as: :file %>
       <%= f.input :address, label: "Address" %>
     </div>
