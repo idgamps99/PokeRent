@@ -41,10 +41,6 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-  color: #3d74db; /* Pokémon Blue for headings */
-}
-
 p {
   font-size: 16px;
   color: #555;
@@ -69,6 +65,29 @@ p {
   background-color: #3d74db;
   color: #ffcb05;
   transform: scale(1.05);
+}
+
+/* Inherit styles from Bootstrap btn btn-primary */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Icon inside the button */
+.btn-primary .icon {
+  margin-right: 8px; /* Space between the icon and the text */
+}
+
+/* Optional: make the image slightly transparent on hover */
+.btn-primary:hover .icon {
+  opacity: 0.8;
 }
 
 .btn-secondary {
@@ -120,3 +139,26 @@ p {
 
 // Map
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+
+/* Delete button with the same size and border-radius as .btn-primary */
+.btn-delete {
+  background-color: #ccc; /* Grey background for the normal state */
+  color: #fff; /* White text */
+  border: 2px solid #ccc; /* Same border thickness as .btn-primary */
+  font-weight: bold; /* Bold text */
+  border-radius: 25px; /* Matching border radius */
+  text-transform: uppercase; /* Capitalized text */
+  letter-spacing: 1px; /* Spacing between letters */
+  font-size: 1rem; /* Same font size as .btn-primary */
+  padding: 10px 20px; /* Same padding as .btn-primary */
+  transition: background-color 0.3s, transform 0.2s ease-in-out; /* Smooth transition */
+}
+
+/* Hover state for the Delete button */
+.btn-delete:hover {
+  background-color: #e74c3c; /* Red background on hover */
+  color: #fff; /* Keep text white */
+  border-color: #e74c3c; /* Match the border color with the hover background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}

@@ -2,8 +2,18 @@
   <h1><%= @pokemon.name %></h1>
   <div class="container">
 
+    <!-- Back Button -->
+    <div class="back-button-container">
+      <%= link_to pokemons_path, class: "link-to-back" do %>
+        <%= image_tag("b-alphabet-round-circle-icon.png", alt: "Back Icon", width: 30, height: 30, class: "back-icon") %>
+        <span class="back-text">Back</span>
+      <% end %>
+    </div>
+
+    <!-- Pokémon Image -->
     <%= cl_image_tag @pokemon.photo.key, height: 400, width: 250, crop: :fill, class: "cl-image-tag" if @pokemon.photo.attached? %>
 
+    <!-- Pokémon Details -->
     <p><strong>Ability:</strong> <%= @pokemon.ability %></p>
     <p><strong>Type:</strong> <%= @pokemon.pokemon_type %></p>
     <p><strong>Owned by:</strong> <%= @owner.first_name %> <%= @owner.last_name %></p>
@@ -16,25 +26,39 @@
       <%= simple_form_for([@pokemon, @booking], local: true) do |form| %>
         <h2>Select Your Booking Dates</h2>
 
-        <div>
-          <%= form.input :booking_start, class: "datepicker", as: :string, placeholder: "Select a start date", input_html: { data: { controller: "datepicker" } } %>
-        </div>
+    <!-- Booking Form -->
+    <% if @pokemon.user_id != current_user.id %>
+      <div class="booking-form">
+        <%= simple_form_for([@pokemon, @booking], local: true) do |form| %>
+          <h2>Select Your Booking Dates</h2>
+          <div>
+            <%= form.input :booking_start, class: "datepicker", as: :string, placeholder: "Select a start date", input_html: { data: { controller: "datepicker" } } %>
+          </div>
+          <div>
+            <%= form.input :booking_end, class: "datepicker", as: :string, placeholder: "Select an end date", input_html: { data: { controller: "datepicker" } } %>
+          </div>
 
-        <div>
-          <%= form.input :booking_end, class: "datepicker", as: :string, placeholder: "Select an end date", input_html: { data: { controller: "datepicker" } } %>
-        </div>
+          <!-- Custom Submit Button with Image and Text -->
+          <%= button_tag type: "submit", class: "btn btn-primary" do %>
+            <%= image_tag("a-alphabet-round-circle-icon.png", alt: "A Icon", width: 20, height: 20, class: "icon") %>
+            <span>Book Pokémon</span>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
 
-        <%= form.submit "Book Pokémon", class: "btn btn-success text-white" %>
-      <% end %>
-    </div>
+    <!-- Pokémon Owner Options -->
     <% if current_user.id == @pokemon.user_id %>
       <div class="option-btn">
-        <%= link_to "Edit Pokémon", edit_pokemon_path(@pokemon), class: "btn btn-primary btn-edit" %>
-        <%= link_to "Delete Pokémon", @pokemon, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-delete" %>
-      </div>
-      <%= link_to "Back to My Pokémon List", my_pokemons_path, class: "btn btn-primary link-to-back" %>
-    <% else %>
-      <%= link_to "Back to Pokémon List", pokemons_path, class: "btn btn-primary link-to-back" %>
+      <%= link_to edit_pokemon_path(@pokemon), class: "btn btn-primary btn-edit" do %>
+        <%= image_tag("a-alphabet-round-circle-icon.png", alt: "A Icon", width: 20, height: 20, class: "icon") %>
+        <span>Edit Pokémon</span>
+      <% end %>
+      <%= link_to @pokemon, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-delete" do %>
+        <%= image_tag("x-circle-fill.512x512.png", alt: "Delete Icon", width: 20, height: 20, class: "icon-delete") %>
+        <span>Delete Pokémon</span>
+      <% end %>
     <% end %>
+
   </div>
 </div>
