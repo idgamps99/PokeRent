@@ -7,7 +7,7 @@
           <%= link_to pokemon_path(pokemon) do %> <!-- Entire card is a link to the show details page -->
           <div class="card-body">
             <div class="img-placeholder">
-              <%= cl_image_tag pokemon.photo.key, height: 300, width: 500, crop: :fill if pokemon.photo.attached? %>
+              <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill if pokemon.photo.attached? %>
             </div>
             <div class="info">
               <div>
