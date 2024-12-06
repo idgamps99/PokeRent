@@ -51,6 +51,12 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.new(pokemon_params)
     @user = current_user
     @pokemon.user = @user
+
+    if params[:pokemon][:photo].blank?
+      default_image_path = Rails.root.join("app", "assets", "images", "default-pokeball.jpg")
+      @pokemon.photo.attach(io: File.open(default_image_path), filename: "default-pokeball.jpg", content_type: "image/jpg")
+    end
+
     if @pokemon.save
       # Changed this so it redirects to my pokemons page
       redirect_to my_pokemons_path

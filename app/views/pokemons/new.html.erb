@@ -5,7 +5,17 @@
       <%= f.input :ability, label: "Pokémon Ability" %>
       <%= f.input :pokemon_type, label: "Pokémon  Type", collection: %w(Normal Fire Water Flying Grass Poison Electric Ground Psychic Rock Ice Bug Dragon Ghost Dark Steel Fairy), prompt: 'Select Type' %>
       <%= f.input :price_per_day, label: "Mana-Cost"  %>
-      <%= f.input :photo, as: :file %>
+      <div class="img-preview">
+        <%= f.input :photo, as: :file, label: "Upload image" %>
+        <div class="avatar">
+          <%= image_tag(
+            @pokemon.photo.attached? ? url_for(@pokemon.photo) : asset_path("default-pokeball.jpg"),
+            alt: "Image preview",
+            class: "img-thumbnail",
+            id: "photo-preview"
+          ) %>
+        </div>
+      </div>
       <%= f.input :address, label: "Address" %>
     </div>
     <div class="form-actions">

@@ -1,7 +1,8 @@
 <div class="info-window">
   <%= link_to pokemon_path(pokemon) do %>
+    <%= cl_image_tag pokemon.photo.key, height: 90, width: 90, crop: :fill if pokemon.photo.attached? %>
     <h2><%= pokemon.name %></h2>
     <p>Type: <%= pokemon.pokemon_type %></p>
-    <p>Price: <%= pokemon.price_per_day %></p>
+    <p>Price: £<%= number_with_precision(pokemon.price_per_day, precision: 2)   %>
   <% end %>
 </div>
