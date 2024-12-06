@@ -18,11 +18,11 @@
             </div>
 
             <div class="info">
-              <div>
+              <div class="poke-cost">
                 <p class="name"><%= pokemon.name %></p>
-                <small class="owner">Owned by <%= owner.first_name %> <%= owner.last_name %></small>
+                <span class="price">£<%= number_with_precision(pokemon.price_per_day, precision: 2)   %></span>
               </div>
-              <span class="price">£<%= number_with_precision(pokemon.price_per_day, precision: 2)   %></span>
+                <small class="owner">Type:</small>
             </div>
           </div>
           <% end %>
