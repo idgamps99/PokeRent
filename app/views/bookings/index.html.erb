@@ -12,8 +12,8 @@
       <div class="card-product-infos">
         <div class="info">
          <h2><%= booking.pokemon.name %></h2>
-          <p>You have requested <strong><%= booking.pokemon.name %></strong> from <%= booking.pokemon.user.username %>.</p>
-          <p>Starting from: <%= booking.booking_start %> to: <%= booking.booking_end %></p>
+          <p>You have requested <strong><%= booking.pokemon.name %></strong> from <strong><%= booking.pokemon.user.username %></strong>.</p>
+          <p>Starting from: <strong><%= booking.booking_start.strftime('%a, %b %e %Y') %></strong> to: <strong><%= booking.booking_end.strftime('%a, %b %e %Y') %></strong></p>
         </div>
         <div class="status <%= booking.status == 'accepted' ? 'accepted' : booking.status == 'rejected' ? 'rejected' : '' %>">
           <p><%= booking.status %></p>

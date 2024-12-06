@@ -4,7 +4,7 @@
       <%= f.input :name, label: "Pokémon Name" %>
       <%= f.input :ability, label: "Pokémon Ability" %>
       <%= f.input :pokemon_type, label: "Pokémon  Type", collection: %w(Normal Fire Water Flying Grass Poison Electric Ground Psychic Rock Ice Bug Dragon Ghost Dark Steel Fairy), prompt: 'Select Type' %>
-      <%= f.input :price_per_day  %>
+      <%= f.input :price_per_day, label: "Mana-Cost"  %>
       <div class="img-preview">
         <%= f.input :photo, as: :file, label: "Upload image" %>
         <div class="avatar">
