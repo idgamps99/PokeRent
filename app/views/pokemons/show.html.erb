@@ -24,6 +24,7 @@
     <p><strong>Ability:</strong> <%= @pokemon.ability %></p>
     <p><strong>Type:</strong> <%= @pokemon.pokemon_type %></p>
     <p><strong>Owned by:</strong> <%= @owner.first_name %> <%= @owner.last_name %></p>
+    <p><strong>Address: </strong><%= @pokemon.address %></p>
     <p><strong>Mana-cost:</strong>
     <% @pokemon.price_per_day.to_i.times do %>
       <img src="<%= asset_path "pngegg.png" %>"  alt="Price Icon" class="price-icon">
@@ -32,9 +33,9 @@
 
     <!-- Booking Form -->
     <% if @pokemon.user_id != current_user.id %>
+    <h2>Select Your Booking Dates</h2>
       <div class="booking-form">
         <%= simple_form_for([@pokemon, @booking], local: true) do |form| %>
-          <h2>Select Your Booking Dates</h2>
           <div>
             <%= form.input :booking_start, class: "datepicker", as: :string, placeholder: "Select a start date", input_html: { data: { controller: "datepicker" } } %>
           </div>
