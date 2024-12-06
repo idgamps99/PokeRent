@@ -25,12 +25,12 @@
     <div class="<%= "d-none" if @pokemon.user_id == current_user.id  %>">
       <%= simple_form_for([@pokemon, @booking], local: true) do |form| %>
         <h2>Select Your Booking Dates</h2>
-
+      <% end %>
+    </div>
     <!-- Booking Form -->
     <% if @pokemon.user_id != current_user.id %>
       <div class="booking-form">
         <%= simple_form_for([@pokemon, @booking], local: true) do |form| %>
-          <h2>Select Your Booking Dates</h2>
           <div>
             <%= form.input :booking_start, class: "datepicker", as: :string, placeholder: "Select a start date", input_html: { data: { controller: "datepicker" } } %>
           </div>
@@ -50,15 +50,15 @@
     <!-- Pokémon Owner Options -->
     <% if current_user.id == @pokemon.user_id %>
       <div class="option-btn">
-      <%= link_to edit_pokemon_path(@pokemon), class: "btn btn-primary btn-edit" do %>
-        <%= image_tag("a-alphabet-round-circle-icon.png", alt: "A Icon", width: 20, height: 20, class: "icon") %>
-        <span>Edit Pokémon</span>
-      <% end %>
-      <%= link_to @pokemon, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-delete" do %>
-        <%= image_tag("x-circle-fill.512x512.png", alt: "Delete Icon", width: 20, height: 20, class: "icon-delete") %>
-        <span>Delete Pokémon</span>
-      <% end %>
+        <%= link_to edit_pokemon_path(@pokemon), class: "btn btn-primary btn-edit" do %>
+          <%= image_tag("a-alphabet-round-circle-icon.png", alt: "A Icon", width: 20, height: 20, class: "icon") %>
+          <span>Edit Pokémon</span>
+        <% end %>
+        <%= link_to @pokemon, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-delete" do %>
+          <%= image_tag("x-circle-fill.512x512.png", alt: "Delete Icon", width: 20, height: 20, class: "icon-delete") %>
+          <span>Delete Pokémon</span>
+        <% end %>
+      </div>
     <% end %>
-
   </div>
 </div>
