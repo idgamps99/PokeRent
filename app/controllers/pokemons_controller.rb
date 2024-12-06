@@ -20,7 +20,7 @@ class PokemonsController < ApplicationController
     if params[:query].present?
       if params[:type_query].present?
         # Searched by name and type
-        @pokemons = @pokemons.search_by_type(params[:type_query]).search_by_type(params[:type_query])
+        @pokemons = @pokemons.search_by_name(params[:query]).search_by_type(params[:type_query])
       else
         # Searched only by name
         @pokemons = @pokemons.search_by_name(params[:query])
