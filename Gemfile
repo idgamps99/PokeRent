@@ -84,3 +84,6 @@ gem "cloudinary"
 gem "geocoder"
 # Search functionality
 gem "pg_search"
+
+# Faker gem for seeds
+gem 'faker'
