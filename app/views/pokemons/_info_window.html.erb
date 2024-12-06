@@ -3,6 +3,8 @@
     <%= cl_image_tag pokemon.photo.key, height: 90, width: 90, crop: :fill if pokemon.photo.attached? %>
     <h2><%= pokemon.name %></h2>
     <p>Type: <%= pokemon.pokemon_type %></p>
-    <p>Price: £<%= number_with_precision(pokemon.price_per_day, precision: 2)   %>
+    <p>Mana-Cost: <% pokemon.price_per_day.to_i.times do %>
+      <img src="<%= asset_path "mana-cost.png" %>"  alt="Price Icon" class="price-icon">
+    <% end %> </p>
   <% end %>
 </div>
