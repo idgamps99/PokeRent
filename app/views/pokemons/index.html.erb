@@ -9,7 +9,7 @@
       <% @pokemons.each do |pokemon| %>
         <% owner = @users.find(pokemon.user_id) %>
 
-        <div class="pokemon-card">
+        <div class="pokemon-card" style="background-image: url('<%= asset_path "pokemon-card.png" %>'); background-size: cover;">
           <%# Entire card is a link to the show details page %>
           <%= link_to pokemon_path(pokemon) do %>
           <div class="card-body">
@@ -19,15 +19,15 @@
 
             <div class="info">
               <div class="poke-info">
-                <p class="name"><%= pokemon.name %></p>
-                <p class="type"><%= pokemon.pokemon_type %></p>
+          <p class="name"><%= pokemon.name %></p>
+          <p class="type"><%= pokemon.pokemon_type %></p>
               </div>
-                <small class="owner">
-                  Mana-cost:
-                  <% pokemon.price_per_day.to_i.times do %>
-                    <img src="<%= asset_path "pngegg.png" %>"  alt="Price Icon" class="price-icon">
-                  <% end %>
-                </small>
+          <small class="owner">
+            Mana-cost:
+            <% pokemon.price_per_day.to_i.times do %>
+              <img src="<%= asset_path "mana-cost.png" %>"  alt="Price Icon" class="price-icon">
+            <% end %>
+          </small>
             </div>
           </div>
           <% end %>

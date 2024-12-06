@@ -10,9 +10,9 @@
     justify-content: space-between;
 
     .pokemon-card {
-      background-color: #fb94819e;
+      background-color: #e1e1e1;
       border: 1px solid #ddd;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       width: calc(33.333% - 20px); // Three cards per row
@@ -32,7 +32,7 @@
         padding: 16px;
         display: flex;
         flex-direction: column;
-        height: 100%;
+        // height: 100%;
 
         .img-placeholder {
           text-align: center;
@@ -70,14 +70,14 @@
 
           .type {
             font-size: 0.9rem;
-            color: #777;
+            color: #000000;
             margin: 0;
           }
 
           .owner {
             margin-top: 6px;
             font-size: 0.9rem;
-            color: #777;
+            color: #000000;
 
             .price-icon {
               width: 16px;
