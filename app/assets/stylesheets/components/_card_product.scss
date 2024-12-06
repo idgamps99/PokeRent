@@ -20,6 +20,7 @@
     border-right: 1px solid #e0e0e0;
   }
 
+
   .card-product-infos {
     display: flex;
     justify-content: space-between;
@@ -31,14 +32,14 @@
       flex: 3;
 
       h2 {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
         margin: 0 0 8px;
         color: #007BFF;
       }
 
       p {
-        font-size: 12px;
+        font-size: 14px;
         line-height: 1.5;
         color: #555;
         margin: 4px 0;
