@@ -53,8 +53,8 @@ class PokemonsController < ApplicationController
     @pokemon.user = @user
 
     if params[:pokemon][:photo].blank?
-      default_image_path = Rails.root.join("app", "assets", "images", "logo-pokeball2.png")
-      @pokemon.photo.attach(io: File.open(default_image_path), filename: "logo-pokeball2.png", content_type: "image/png")
+      default_image_path = Rails.root.join("app", "assets", "images", "default-pokeball.jpg")
+      @pokemon.photo.attach(io: File.open(default_image_path), filename: "default-pokeball.jpg", content_type: "image/jpg")
     end
 
     if @pokemon.save
