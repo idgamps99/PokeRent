@@ -52,17 +52,14 @@
           // align-items: center;
           margin-bottom: 16px;
 
-          .poke-cost {
+          .poke-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 4px;
 
-            img {
-              width: 20px;
-              height: 20px;
-            }
           }
+
 
           .name {
             font-size: 1.1rem;
@@ -71,9 +68,20 @@
             color: black;
           }
 
-          .owner {
+          .type {
             font-size: 0.9rem;
             color: #777;
+            margin: 0;
+          }
+
+          .owner {
+            margin-top: 6px;
+            font-size: 0.9rem;
+            color: #777;
+
+            .price-icon {
+              width: 16px;
+            }
           }
 
           .price {
