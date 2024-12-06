@@ -14,7 +14,7 @@
       background-color: #e1e1e1;
       background-size: cover;
       border: 1px solid #ddd;
-      border-radius: 10px;
+      border-radius: 16px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       aspect-ratio: 32/45;
       //overflow: hidden;
@@ -53,8 +53,7 @@
           // display: flex;
           // justify-content: space-between;
           // align-items: center;
-          margin-bottom: 16px;
-
+          margin: 25px 16px;
           .poke-info {
             display: flex;
             justify-content: space-between;
