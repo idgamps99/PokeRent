@@ -22,8 +22,6 @@
       <img src="<%= asset_path "pngegg.png" %>"  alt="Price Icon" class="price-icon">
     <% end %>
     <div class="<%= "d-none" if @pokemon.user_id == current_user.id  %>">
-      <%= simple_form_for([@pokemon, @booking], local: true) do |form| %>
-        <h2>Select Your Booking Dates</h2>
 
     <!-- Booking Form -->
     <% if @pokemon.user_id != current_user.id %>
@@ -58,6 +56,7 @@
         <span>Delete Pokémon</span>
       <% end %>
     <% end %>
-
   </div>
+</div>
+</div>
 </div>
