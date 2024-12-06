@@ -8,7 +8,8 @@ class PokemonsController < ApplicationController
     @markers = @pokemons.geocoded.map do |p| {
         lat: p.latitude,
         lng: p.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {pokemon: p})
+        info_window_html: render_to_string(partial: "info_window", locals: {pokemon: p}),
+        marker_html: render_to_string(partial: "marker")
       }
     end
 
@@ -19,7 +20,7 @@ class PokemonsController < ApplicationController
     if params[:query].present?
       if params[:type_query].present?
         # Searched by name and type
-        @pokemons = @pokemons.search_by_type(params[:type_query]).search_by_type(params[:type_query])
+        @pokemons = @pokemons.search_by_name(params[:query]).search_by_type(params[:type_query])
       else
         # Searched only by name
         @pokemons = @pokemons.search_by_name(params[:query])

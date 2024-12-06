@@ -1,0 +1,36 @@
+.info-window {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  outline: none;
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+
+    &:last-child {
+      margin-top: 5px;
+      // font-weight: bold;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

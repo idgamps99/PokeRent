@@ -1,3 +1,7 @@
-<h2><%= pokemon.name %></h2>
-<p>Type: <%= pokemon.pokemon_type %></p>
-<p>Price: <%= pokemon.price_per_day %></p>
+<div class="info-window">
+  <%= link_to pokemon_path(pokemon) do %>
+    <h2><%= pokemon.name %></h2>
+    <p>Type: <%= pokemon.pokemon_type %></p>
+    <p>Price: <%= pokemon.price_per_day %></p>
+  <% end %>
+</div>
