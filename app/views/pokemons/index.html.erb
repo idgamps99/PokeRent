@@ -23,7 +23,7 @@
                 <p class="type"><%= pokemon.pokemon_type %></p>
               </div>
                 <small class="owner">
-                  Mana:
+                  Mana-cost:
                   <% pokemon.price_per_day.to_i.times do %>
                     <img src="<%= asset_path "pngegg.png" %>"  alt="Price Icon" class="price-icon">
                   <% end %>
